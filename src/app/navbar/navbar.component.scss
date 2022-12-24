@@ -1,0 +1,62 @@
+.navbar-wrapper {
+  height: 60px;
+  background-color: #D9D9D9;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.navbar-project-logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+
+}
+
+.navbar-link {
+  width: 25px;
+}
+
+.navbar-search-mGlass {
+  width: 20px;
+}
+
+.navbar-search-input {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+
+.navbar-search-input-wrapper {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: thin;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-search {
+    display: none;
+  }
+}
+
+.navbar-search-input-small-screen {
+  background-color: #D9D9D9;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.navbar-link-hover:hover {
+  background-color: #A3A3A3;
+  border-radius: 100%;
+  cursor: pointer;
+
+}
+
+.navbar-dropdown {
+  white-space: nowrap;
+  border-radius: 15px;
+  background-color: #D9D9D9;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.navbar-dropdown-link{
+  border-radius: 15px;
+  background-color: rgba(60, 65, 103, 0.14);
+}
