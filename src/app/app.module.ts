@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ServerComponent,
     ServersComponent,
     NavbarComponent,
+    LoginComponent,
+    RegisterComponent,
 
   ],
   imports: [
