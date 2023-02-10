@@ -1,0 +1,35 @@
+.profile-header{
+  width: 125px;
+  height: 125px;
+  border-radius: 100%;
+  background-color: #3C4167;
+  z-index: 1;
+}
+
+.profile-name{
+  margin-top: 90px;
+  color: #3C4167;
+}
+
+.profile-content{
+  z-index: 0;
+  margin-top: 35px;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
+}
+
+.profile-email-password{
+  background-color: #3C4167;
+  color: #FFFFFF;
+  border-radius: 0px 20px 20px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
+}
+
+.profile-email-password-descp{
+  background-color: #FFFFFF;
+  border-radius: 20px 0px 0px 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
+  border-style: solid;
+  border-width: thin;
+}

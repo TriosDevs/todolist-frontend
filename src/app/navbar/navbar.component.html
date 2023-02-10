@@ -14,17 +14,17 @@
       class="col-8 m-0 p-0 col-sm-8 col-md-4 col-lg-2 d-flex justify-content-sm-evenly justify-content-md-center justify-content-lg-start justify-content-sm-start justify-content-evenly align-items-center">
       <div class="d-md-none navbar-link-hover p-2 d-flex justify-content-center align-items-center"><img
         class="navbar-link" src="assets/images/mGlass.png"/></div>
-      <div class="navbar-link-hover p-2 d-flex justify-content-center align-items-center ms-lg-5"><img
+      <div class="navbar-link-hover p-2 d-flex justify-content-center align-items-center ms-lg-5" routerLink="/home"><img
         class="navbar-link" src="assets/images/home.png"/></div>
-      <div class="navbar-link-hover mx-md-5 mx-lg-4 p-2 d-flex justify-content-center align-items-center"><img
+      <div class="navbar-link-hover mx-md-5 mx-lg-4 p-2 d-flex justify-content-center align-items-center" routerLink="/list"><img
         class="navbar-link" src="assets/images/clipboard.png"/></div>
-      <div class="navbar-link-hover p-2 d-flex justify-content-center align-items-center">
+      <div [ngClass]="active ? 'navbar-link-hover p-2 d-flex justify-content-center align-items-center navbar-link-profile-background' : 'navbar-link-hover p-2 d-flex justify-content-center align-items-center'" (click) = "activeNavLink()" >
         <div class="d-flex flex-column align-items-lg-center align-items-end position-relative">
           <img class="navbar-link position-relative" src="assets/images/user.png"/>
-          <div class="navbar-dropdown position-absolute top-0 mt-5 p-3">
-            <div class="navbar-dropdown-link p-1 px-4">Profile</div>
-            <div class="navbar-dropdown-middleLine my-2"></div>
-            <div class="navbar-dropdown-link p-1 px-4">Log out</div>
+          <div *ngIf="active" class="navbar-dropdown position-absolute top-0 mt-5 p-3">
+            <div class="each-link navbar-dropdown-link p-1 px-4" routerLink="/profile">Profile</div>
+            <div class="each-link navbar-dropdown-middleLine my-2"></div>
+            <div class="each-link navbar-dropdown-link p-1 px-4" routerLink="/login">Log out</div>
           </div>
         </div>
 

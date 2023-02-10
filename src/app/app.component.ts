@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'first-project';
+  auth:boolean
+  constructor(private elementRef: ElementRef) {
+    this.auth = false
+  }
+  ngAfterViewInit() {
+    this.elementRef.nativeElement.ownerDocument
+      .body.style.backgroundColor = '#F1EBEB';
+    this.elementRef.nativeElement.ownerDocument
+      .body.style.userSelect = 'none';
+  }
 }

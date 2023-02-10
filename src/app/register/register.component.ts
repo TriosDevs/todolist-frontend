@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+  trying: boolean = true;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  passwordAgain: string;
+  showErrorMessage: boolean;
+
+  registerHandler(){
+    console.log(this.firstName);
+  }
 
 }

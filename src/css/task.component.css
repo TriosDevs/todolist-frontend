@@ -1,0 +1,48 @@
+.task-component-wrapper {
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
+}
+
+.task-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #FFFFFF;
+}
+
+.task-header {
+  border-radius: 15px;
+  background-color: #3C4167;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
+}
+
+.task-tick-section {
+  border-radius: 30px 30px 30px 30px;
+  border-style: solid;
+  border-width: thin;
+  background-color: #FFFFFF;
+}
+
+.task-tick-checkbox-wrapper {
+  width: 20px;
+  height: 20px;
+  background-color: #FFF361;
+}
+
+.task-tick-checkbox {
+  width: 20px;
+  border-style: solid;
+  border-width: thin;
+}
+
+.task-content {
+  background-color: #FFF361;
+  color: #3C4167;
+  border-radius: 30px 0px 0px 30px;
+}
+
+.task-content-wrapper {
+  background-color: #FFF361;
+  border-radius: 30px;
+}

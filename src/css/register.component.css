@@ -1,0 +1,94 @@
+.login-register-background-template {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #F1EBEB;
+}
+
+.vector1-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.vector2-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.vector3-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.vector1 {
+  width: 35%;
+}
+
+.vector2 {
+  width: 50%;
+  margin-top: -65%;
+  margin-right: -5%;
+}
+
+.vector3 {
+  width: 50%;
+  margin-left: 14%;
+}
+
+@media screen and (max-width: 600px) {
+  .vector1 {
+    width: 65%;
+  }
+  .vector2 {
+    width: 25%;
+    margin-top: -125%;
+  }
+  .vector3 {
+    width: 125%;
+    margin-left: -50%;
+  }
+}
+
+@media screen and (max-width: 814px) {
+  .vector1 {
+    width: 45%;
+  }
+  .vector2 {
+    width: 35%;
+    margin-top: -125%;
+  }
+  .vector3 {
+    width: 100%;
+    margin-left: -20%;
+  }
+}
+
+.login-content-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.navbar-project-logo {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.login-register-input {
+  border: 0;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+.login-register-button {
+  border-radius: 20px;
+  background-color: #587CF7;
+}
+
+.login-register-error-message {
+  color: rgba(238, 44, 44, 0.86);
+}
