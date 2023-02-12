@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 import { HttpService } from './http.service';
+import { ErrorModalComponent } from './error-modal/error-modal.component';
 const appRoutes: Routes =[
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
@@ -36,6 +37,7 @@ const appRoutes: Routes =[
     HomeComponent,
     ProfileComponent,
     PageNotFoundComponent,
+    ErrorModalComponent,
 
   ],
   imports: [

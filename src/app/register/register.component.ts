@@ -3,15 +3,16 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpService } from '../http.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
-  errorMessage:string;
   errorStatus:boolean = false
   loadingIndicator:boolean = false;
+  errorMessage:string;
   constructor(private httpService: HttpService,private router: Router) {}
 
   onSubmit(form: NgForm) {
@@ -22,7 +23,7 @@ export class RegisterComponent {
     setTimeout(()=>{
 
       if (form.value.password != form.value.passwordAgain){
-        this.errorMessage = 'Passwords do not matches!'
+        this.errorMessage = 'Passwords do not matches!';
         this.loadingIndicator = false;
         return;
       }
