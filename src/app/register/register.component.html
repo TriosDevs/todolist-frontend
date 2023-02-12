@@ -5,20 +5,20 @@
   <div class="login-content-wrapper position-absolute d-flex flex-column">
     <div class="navbar-project-logo text-center mt-5">To-Do-App</div>
     <div class="row m-0 p-0 mt-5 flex-column-reverse flex-md-row">
-      <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center mt-5 mt-md-0 ">
-        <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5"><input class="login-register-input py-2 ps-3 pe-5 w-100" placeholder="First Name" [(ngModel)] = "firstName"/></div>
-        <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5"><input class="login-register-input py-2 ps-3 pe-5 mt-4 w-100" placeholder="Last Name" [(ngModel)] = "lastName"/></div>
-        <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5"><input class="login-register-input py-2 ps-3 pe-5 mt-4 w-100" placeholder="Email" [(ngModel)] = "email"/></div>
-        <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5"><input class="login-register-input py-2 ps-3 pe-5 mt-4 w-100" placeholder="Password" [(ngModel)] = "password"/></div>
-        <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5"><input class="login-register-input py-2 ps-3 pe-5 mt-4 w-100" placeholder="Password(Again)" [(ngModel)] = "passwordAgain"/></div>
-        <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5 mt-2 login-register-error-message fw-bold">Invalid username</div>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center mt-5 mt-md-0 ">
+        <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5"><input class="login-register-input py-2 ps-3 pe-5 w-100" placeholder="First Name" ngModel name="firstName"/></div>
+        <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5"><input class="login-register-input py-2 ps-3 pe-5 mt-4 w-100" placeholder="Last Name" ngModel name="lastName"/></div>
+        <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5"><input class="login-register-input py-2 ps-3 pe-5 mt-4 w-100" placeholder="Email" ngModel name="email"/></div>
+        <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5"><input class="login-register-input py-2 ps-3 pe-5 mt-4 w-100" placeholder="Password" ngModel name="password" type="password"/></div>
+        <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5"><input class="login-register-input py-2 ps-3 pe-5 mt-4 w-100" placeholder="Password(Again)" ngModel name="passwordAgain" type="password"/></div>
+        <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5 mt-2 login-register-error-message fw-bold" *ngIf="errorStatus">{{errorMessage}}</div>
         <div class="col-10 col-md-8 col-lg-6 ms-0 ms-md-5 mt-4 d-flex justify-content-center">
-          <button class="btn w-50 login-register-button text-light mb-5 mb-md-0 d-flex justify-content-center align-items-center" (click) = "registerHandler()" [disabled]="!trying">
-            <!---<div class="spinner-border" role="status"></div> -->
-            Register
+          <button class="btn w-50 login-register-button text-light mb-5 mb-md-0 d-flex justify-content-center align-items-center" >
+            <div class="spinner-border" role="status" *ngIf="loadingIndicator"></div>
+            <div *ngIf="!loadingIndicator">Register</div>
           </button>
         </div>
-      </div>
+      </form>
       <div class="col-12 col-md-6 d-flex justify-content-center align-items-center"><img class="w-75 me-0 me-md-5" src="assets/images/loginToDoPhoto.png"/></div>
     </div>
   </div>

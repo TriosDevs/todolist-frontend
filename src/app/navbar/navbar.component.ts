@@ -1,4 +1,5 @@
 import { Component,Input } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +9,12 @@ import { Component,Input } from '@angular/core';
 export class NavbarComponent {
   active:boolean = false
 
+  constructor(private authService: AuthService){}
   activeNavLink(){
     this.active = !this.active
+  }
+  onLogout(){
+    this.authService.logout();
   }
 }
 

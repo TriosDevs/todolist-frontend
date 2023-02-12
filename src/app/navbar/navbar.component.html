@@ -24,7 +24,7 @@
           <div *ngIf="active" class="navbar-dropdown position-absolute top-0 mt-5 p-3">
             <div class="each-link navbar-dropdown-link p-1 px-4" routerLink="/profile">Profile</div>
             <div class="each-link navbar-dropdown-middleLine my-2"></div>
-            <div class="each-link navbar-dropdown-link p-1 px-4" routerLink="/login">Log out</div>
+            <div class="each-link navbar-dropdown-link p-1 px-4" routerLink="/login" (click)="onLogout()">Log out</div>
           </div>
         </div>
 

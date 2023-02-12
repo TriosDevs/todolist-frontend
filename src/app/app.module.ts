@@ -11,12 +11,18 @@ import { TaskComponent } from './task/task.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import {Routes,RouterModule} from "@angular/router";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
+import { HttpService } from './http.service';
 const appRoutes: Routes =[
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
-  {path:'home',component:HomeComponent},
-  {path:'list',component:ListComponent},
-  {path:'profile',component:ProfileComponent}
+  {path:'home',canActivate:[AuthGuard],component:HomeComponent},
+  {path:'list',canActivate:[AuthGuard],component:ListComponent},
+  {path:'profile',canActivate:[AuthGuard],component:ProfileComponent},
+  {path:'not-found',component:PageNotFoundComponent},
+  {path:'**',redirectTo:'/not-found'}
 ]
 
 @NgModule({
@@ -29,6 +35,7 @@ const appRoutes: Routes =[
     TaskComponent,
     HomeComponent,
     ProfileComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [
@@ -37,7 +44,7 @@ const appRoutes: Routes =[
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard,HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
