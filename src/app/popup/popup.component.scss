@@ -1,0 +1,26 @@
+.popup-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content-wrapper {
+  background-color: #f1ebeb;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.30) 0px 10px 10px 0px;
+}
+
+.popup-content-confirm-button {
+  background-color: #ee2c2cd9;
+  color: #f1ebeb;
+  border-radius: 18px;
+}
+
+.popup-content-cancel-button {
+  background-color: #f1ebeb;
+  color: #ee2c2cd9;
+  border-radius: 18px;
+  border-style: solid;
+  border-width: thin;
+  border-color: #ee2c2cd9;
+}

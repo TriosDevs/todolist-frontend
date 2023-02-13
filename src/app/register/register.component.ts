@@ -16,9 +16,7 @@ export class RegisterComponent {
   constructor(private httpService: HttpService,private router: Router) {}
 
   onSubmit(form: NgForm) {
-    /*const headers = new HttpHeaders({
-      'Content-Type': 'application/json; charset=utf-8',
-    });*/
+    
     this.loadingIndicator = true;
     setTimeout(()=>{
 

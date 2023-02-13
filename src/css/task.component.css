@@ -1,5 +1,5 @@
 .task-component-wrapper {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
 }
@@ -8,12 +8,12 @@
   width: 15px;
   height: 15px;
   border-radius: 100%;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .task-header {
   border-radius: 15px;
-  background-color: #3C4167;
+  background-color: #3c4167;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
 }
 
@@ -21,13 +21,13 @@
   border-radius: 30px 30px 30px 30px;
   border-style: solid;
   border-width: thin;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .task-tick-checkbox-wrapper {
   width: 20px;
   height: 20px;
-  background-color: #FFF361;
+  background-color: #fff361;
 }
 
 .task-tick-checkbox {
@@ -37,12 +37,12 @@
 }
 
 .task-content {
-  background-color: #FFF361;
-  color: #3C4167;
+  background-color: #fff361;
+  color: #3c4167;
   border-radius: 30px 0px 0px 30px;
 }
 
 .task-content-wrapper {
-  background-color: #FFF361;
+  background-color: #fff361;
   border-radius: 30px;
 }

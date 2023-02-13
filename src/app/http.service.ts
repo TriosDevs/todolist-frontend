@@ -1,13 +1,21 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class HttpService {
   baseURL: string = 'https://todolist-api.oguzhanercelik.dev';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private authService: AuthService) {}
 
   createHttpRequest(endpoint: string, requestType: string, data: object) {
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.authService.token}`
+    });
+
+  const requestOptions = { headers: headers };
     switch (requestType.toUpperCase()) {
       case 'POST':
         return this.http
@@ -15,10 +23,9 @@ export class HttpService {
           .pipe(catchError(this.handleError));
 
       case 'GET':
-        this.http.get(this.baseURL + endpoint).subscribe((res) => {
-          console.log(res);
-        });
-        break;
+        
+        return this.http.get(this.baseURL + endpoint,requestOptions).pipe(catchError(this.handleError));
+
       case 'UPDATE':
         this.http.patch(this.baseURL + endpoint, data).subscribe((res) => {
           console.log(res);

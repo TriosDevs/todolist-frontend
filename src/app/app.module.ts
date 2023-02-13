@@ -16,12 +16,13 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 import { HttpService } from './http.service';
 import { ErrorModalComponent } from './error-modal/error-modal.component';
+import { PopupComponent } from './popup/popup.component';
 const appRoutes: Routes =[
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'home',canActivate:[AuthGuard],component:HomeComponent},
   {path:'list',canActivate:[AuthGuard],component:ListComponent},
-  {path:'profile',canActivate:[AuthGuard],component:ProfileComponent},
+  {path:'profile'/*,canActivate:[AuthGuard]*/,component:ProfileComponent},
   {path:'not-found',component:PageNotFoundComponent},
   {path:'**',redirectTo:'/not-found'}
 ]
@@ -38,6 +39,7 @@ const appRoutes: Routes =[
     ProfileComponent,
     PageNotFoundComponent,
     ErrorModalComponent,
+    PopupComponent,
 
   ],
   imports: [

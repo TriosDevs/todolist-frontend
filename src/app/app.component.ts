@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import {AfterViewInit, Component, DoCheck, ElementRef, KeyValueDiffers, OnChanges} from '@angular/core';
+import {AfterViewInit, Component, DoCheck, ElementRef, EventEmitter, KeyValueDiffers, OnChanges,Output} from '@angular/core';
 import { AuthService } from './auth.service';
 
 @Component({
@@ -7,9 +7,10 @@ import { AuthService } from './auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements DoCheck {
+export class AppComponent{
   auth:boolean;;
   differ:any;
+  popupStats:boolean;
   constructor(private authService: AuthService,private elementRef: ElementRef) {
       this.auth = authService.loggedIn;
   }
@@ -23,4 +24,7 @@ export class AppComponent implements DoCheck {
       .body.style.userSelect = 'none';
   }
 
+  popupFunc(){
+
+  }
 }
