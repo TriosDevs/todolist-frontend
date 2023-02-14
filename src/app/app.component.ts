@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import {AfterViewInit, Component, DoCheck, ElementRef, EventEmitter, KeyValueDiffers, OnChanges,Output} from '@angular/core';
+import {AfterViewInit, Component, DoCheck, ElementRef} from '@angular/core';
 import { AuthService } from './auth.service';
 
 @Component({
@@ -10,7 +9,6 @@ import { AuthService } from './auth.service';
 export class AppComponent{
   auth:boolean;;
   differ:any;
-  popupStats:boolean;
   constructor(private authService: AuthService,private elementRef: ElementRef) {
       this.auth = authService.loggedIn;
   }
@@ -22,9 +20,5 @@ export class AppComponent{
       .body.style.backgroundColor = '#F1EBEB';
     this.elementRef.nativeElement.ownerDocument
       .body.style.userSelect = 'none';
-  }
-
-  popupFunc(){
-
   }
 }

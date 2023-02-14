@@ -1,4 +1,4 @@
-import { Component,EventEmitter,OnInit, Output } from '@angular/core';
+import { Component,OnInit} from '@angular/core';
 import { HttpService } from '../http.service';
 import { PopupService } from '../popup.service';
 @Component({
@@ -7,12 +7,18 @@ import { PopupService } from '../popup.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit{
-  @Output() popupStatus = EventEmitter<boolean>;
+  name:string;
+  surname:string;
+  email:string;
+
   constructor(private httpService:HttpService,private popupService:PopupService){}
 
   ngOnInit(){
     this.httpService.createHttpRequest('/api/user',"GET",{}).subscribe(res =>{
       console.log(res);
+      this.name = res.firstName;
+      this.surname = res.lastName;
+      this.email = res.mail;
     },error =>{
       console.log(error);
     })

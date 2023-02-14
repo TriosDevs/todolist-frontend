@@ -2,7 +2,7 @@
     <div class="popup-content-wrapper d-flex flex-column justify-content-center align-items-center mx-4 px-3 px-sm-5 py-4">
         <div class="popup-content fw-bold text-center">Are you sure that you remove your account?</div>
         <div class="row row-sm m-0 p-0 mt-4 w-100 d-flex justify-content-center">
-            <div class="col-12 col-sm-6 col-lg-5"><button class="btn popup-content-confirm-button w-100">Confirm</button></div>
+            <div class="col-12 col-sm-6 col-lg-5"><button class="btn popup-content-confirm-button w-100" (click)="removeAccount()">Confirm</button></div>
             <div class="col-12 col-sm-6 col-lg-5 mt-2 mt-sm-0"><button class="btn popup-content-cancel-button w-100" (click)="changePopupStatus()">Cancel</button></div>
         </div>
     </div>

@@ -12,7 +12,7 @@
     </div>
     <div
       class="col-8 m-0 p-0 col-sm-8 col-md-4 col-lg-2 d-flex justify-content-sm-evenly justify-content-md-center justify-content-lg-start justify-content-sm-start justify-content-evenly align-items-center">
-      <div class="d-md-none navbar-link-hover p-2 d-flex justify-content-center align-items-center"><img
+      <div class="d-md-none navbar-link-hover p-2 d-flex justify-content-center align-items-center" (click) = "onSwitch()"><img
         class="navbar-link" src="assets/images/mGlass.png"/></div>
       <div class="navbar-link-hover p-2 d-flex justify-content-center align-items-center ms-lg-5" routerLink="/home"><img
         class="navbar-link" src="assets/images/home.png"/></div>
@@ -32,7 +32,7 @@
 
     </div>
   </div>
-  <div class="navbar-search-input-small-screen py-3 d-md-none">
+  <div *ngIf="searchInput" class="navbar-search-input-small-screen py-3 d-md-none">
     <div class="navbar-search-input-wrapper d-flex align-items-center p-1 px-2 mx-5 ">
       <img class="navbar-search-mGlass" src="assets/images/mGlass.png"/>
       <div class="ms-2 w-100"><input class="navbar-search-input pe-0 pe-sm-5 w-100" placeholder="Search..."/></div>

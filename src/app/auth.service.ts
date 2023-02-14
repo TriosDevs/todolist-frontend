@@ -1,6 +1,6 @@
 export class AuthService {
-    loggedIn:boolean;
-    token:string;
+    loggedIn:boolean = localStorage.getItem('token') == null ? false : true;
+    token:string = localStorage.getItem('token') == null ? null : localStorage.getItem('token');
 
     isAuthenticated(){
         const promise = new Promise(

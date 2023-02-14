@@ -8,13 +8,16 @@ import { AuthService } from '../auth.service';
 })
 export class NavbarComponent {
   active:boolean = false
-
+  searchInput:boolean;
   constructor(private authService: AuthService){}
   activeNavLink(){
     this.active = !this.active
   }
   onLogout(){
     this.authService.logout();
+  }
+  onSwitch(){
+    this.searchInput = !this.searchInput
   }
 }
 
