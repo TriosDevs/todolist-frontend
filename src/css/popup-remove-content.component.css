@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+.popup-remove-content-button {
+  background-color: rgba(238, 44, 44, 0.86);
+  color: #ffffff;
+  border-radius: 18px;
+}

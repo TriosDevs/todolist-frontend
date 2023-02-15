@@ -15,27 +15,6 @@
   box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 10px 0px;
 }
 
-.popup-content-confirm-button {
-  background-color: rgba(238, 44, 44, 0.86);
-  color: #F1EBEB;
-  border-radius: 18px;
-}
-
-.popup-content-confirm-button-2 {
-  background-color: #587CF7;
-  color: #F1EBEB;
-  border-radius: 18px;
-}
-
-.popup-content-cancel-button {
-  background-color: #F1EBEB;
-  color: rgba(238, 44, 44, 0.86);
-  border-radius: 18px;
-  border-style: solid;
-  border-width: thin;
-  border-color: rgba(238, 44, 44, 0.86);
-}
-
 .lists-confirm-btn {
   background-color: #587CF7;
   color: #F1EBEB;
@@ -76,4 +55,10 @@
 
 .popup-list-input-img {
   width: 25px;
+}
+
+.popup-create-content-button {
+  background-color: #587CF7;
+  color: #ffffff;
+  border-radius: 18px;
 }

@@ -1,0 +1,64 @@
+@import "../../../../styles.scss";
+.popup-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+  
+  .popup-close-btn {
+    width: 25px;
+  }
+  
+  .popup-content-wrapper {
+    background-color: $backgroundColor;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 10px 0px;
+  }
+  
+  .lists-confirm-btn {
+    background-color: $blue;
+    color: $backgroundColor;
+    border-radius: 18px;
+  }
+  
+  .popup-list-descp {
+    color: $darkBlue;
+  }
+  
+  .popup-list-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background-color: $darkBlue;
+  }
+  
+  .popup-list-line {
+    width: 100%;
+    height: 1px;
+    background-color: $darkBlue;
+  }
+  
+  .popup-list-input-wrapper {
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 4px 0px;
+    border-style: solid;
+    border-width: thin;
+    border-color: $darkBlue;
+  }
+  
+  .popup-list-input {
+    outline: none;
+    border: 0;
+    background-color: $dropdownHoverColor;
+    border-radius: 5px;
+  }
+  
+  .popup-list-input-img {
+    width: 25px;
+  }
+  
+  .popup-create-content-button{
+    background-color: $blue;
+    color: $white;
+    border-radius: $borderRadius;
+  }
