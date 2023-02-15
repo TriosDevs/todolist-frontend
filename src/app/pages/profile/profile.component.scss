@@ -1,8 +1,9 @@
+@import '../../../styles.scss';
 .profile-header{
   width: 125px;
   height: 125px;
   border-radius: 100%;
-  background-color: #3C4167;
+  background-color: $darkBlue;
   z-index: 1;
 }
 
@@ -20,7 +21,7 @@
 }
 
 .profile-email-password{
-  background-color: #3C4167;
+  background-color: $darkBlue;
   font-weight: bold;
   color: #FFFFFF;
   border-radius: 0px 20px 20px 0px;
@@ -33,17 +34,17 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
   border-style: solid;
   border-width: thin;
-  border-color: #3C4167;
+  border-color: $darkBlue
 }
 
 .profile-update-btn{
-  background-color: #587CF7;
+  background-color: $blue;
   border-radius: 18px;
   color: #FFFFFF;
 }
 
 .profile-remove-btn{
-  background-color: #ee2c2cd9;
+  background-color: $warningButtonColor;
   border-radius: 18px;
   color: #FFFFFF;
 }

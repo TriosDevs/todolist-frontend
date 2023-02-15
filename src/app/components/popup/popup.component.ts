@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
@@ -41,10 +41,9 @@ export class PopupComponent implements OnInit {
         console.log(error);
       }
     );
-
   }
 
-  createList(form:NgForm) {
+  createList(form: NgForm) {
     const data = {
       name: form.value.name,
     };
@@ -58,6 +57,10 @@ export class PopupComponent implements OnInit {
         console.log(error);
       }
     );
+  }
 
+  avoidClosing(e:Event){
+    e.stopPropagation()
+    
   }
 }

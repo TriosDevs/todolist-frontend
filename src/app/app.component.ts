@@ -20,7 +20,5 @@ export class AppComponent{
       .body.style.backgroundColor = '#F1EBEB';
     this.elementRef.nativeElement.ownerDocument
       .body.style.userSelect = 'none';
-
-
   }
 }

@@ -1,10 +1,11 @@
+@import '../../../styles.scss';
 .profile-header{
     border-radius: 20px;
-    background-color: #FFF361;
-    color: #3C4167;
+    background-color: $yellow;
+    color: $darkBlue;
     border-style: solid;
     border-width: 2px;
-    border-color: #3C4167;
+    border-color: $darkBlue;
     z-index: 1;
   }
   
@@ -22,7 +23,7 @@
   }
   
   .profile-email-password{
-    background-color: #3C4167;
+    background-color: $darkBlue;
     font-weight: bold;
     color: #FFFFFF;
     border-radius: 0px 20px 20px 0px;
@@ -35,11 +36,11 @@
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
     border-style: solid;
     border-width: thin;
-    border-color: #3C4167;
+    border-color: $darkBlue;
   }
   
   .profile-confirm-btn{
-    background-color: #587CF7;
+    background-color: $blue;
     border-radius: 18px;
     color: #FFFFFF;
   }

@@ -1,6 +1,8 @@
+@import '../../../styles.scss';
+
 .lists-button{
-    background-color: #FFF361;
-    color: #3C4167;
+    background-color: $yellow;
+    color: $darkBlue;
     border-radius: 20px 0px 0px 20px;
     font-size: 1.2rem;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px, rgba(0, 0, 0, 0.15) 0px 5px 5px;

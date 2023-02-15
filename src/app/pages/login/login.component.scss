@@ -1,8 +1,10 @@
+@import '../../../styles.scss';
+
 .login-register-background-template {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #F1EBEB;
+  background-color: $backgroundColor;
 }
 
 .vector1-wrapper {
@@ -92,9 +94,9 @@
 
 .login-register-button{
   border-radius: 20px;
-  background-color: #587CF7;
+  background-color: $blue;
 }
 
 .login-register-error-message{
-  color: rgba(238,44,44,0.86);
+  color: $warningButtonColor;
 }

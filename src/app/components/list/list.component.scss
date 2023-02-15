@@ -1,3 +1,4 @@
+@import '../../../styles.scss';
 .list-component-wrapper{
   background-color: #FFFFFF;
   border-radius: 15px 0px 15px 15px;
@@ -8,7 +9,7 @@
   width: 15px;
   height: 15px;
   border-radius: 100%;
-  background-color: #FFF361;
+  background-color: $yellow;
 }
 
 .list-dots{
@@ -17,13 +18,13 @@
 }
 
 .task-content{
-  background-color: #3C4167;
+  background-color: $darkBlue;
   color: #FFFFFF;
   border-radius: 0px 0px 0px 15px;
 }
 
 .list-content{
-  color: #3C4167;
+  color: $darkBlue;
 }
 
 .list-dots-dropdown{

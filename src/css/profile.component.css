@@ -1,3 +1,4 @@
+/* You can add global styles to this file, and also import other style files */
 .profile-header {
   width: 125px;
   height: 125px;
@@ -43,7 +44,7 @@
 }
 
 .profile-remove-btn {
-  background-color: #ee2c2cd9;
+  background-color: rgba(238, 44, 44, 0.86);
   border-radius: 18px;
   color: #FFFFFF;
 }

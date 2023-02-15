@@ -11,7 +11,9 @@ export class ProfileComponent implements OnInit{
   surname:string;
   email:string;
 
-  constructor(private httpService:HttpService,private popupService:PopupService){}
+  constructor(private httpService:HttpService,private popupService:PopupService){
+    this.popupService.changePopupStatus(true);
+  }
 
   ngOnInit(){
     this.httpService.createHttpRequest('/api/user',"GET",{}).subscribe(res =>{

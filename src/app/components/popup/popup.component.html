@@ -1,9 +1,30 @@
 <div
   *ngIf="popupStatus"
   class="popup-wrapper d-flex justify-content-center align-items-center"
+  (click)="changePopupStatus()"
 >
-  <form (ngSubmit)="createList(f)" #f="ngForm"
-    class="popup-content-wrapper d-flex flex-column justify-content-center align-items-center mx-4 px-3 px-sm-5 py-4"
+  <div class="popup-content-wrapper d-flex flex-column"  (click)="avoidClosing($event)">
+    <div class="align-self-end me-3 mt-3">
+      <img
+        role="button"
+        (click)="changePopupStatus()"
+        class="popup-close-btn"
+        src="assets/images/close.png"
+      />
+    </div>
+    <div class="popup-content mx-5 mb-3">
+      <div>adssad</div>
+      <div class="col-12 col-sm-6 col-lg-12">
+        <button class="btn popup-content-confirm-button-2 w-100 px-3">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+  <form
+    (ngSubmit)="createList(f)"
+    #f="ngForm"
+    class="d-none popup-content-wrapper d-flex flex-column justify-content-center align-items-center mx-4 px-3 px-sm-5 py-4"
   >
     <!--
             <div class="popup-content fw-bold text-center">Are you sure that you remove your account?</div>
@@ -31,15 +52,17 @@
       <div
         class="col-9 col-sm-10 col-md-10 popup-list-input-right-side d-flex justify-content-start align-items-center"
       >
-        <input class="popup-list-input w-100 py-1" type="text" name="name" ngModel />
+        <input
+          class="popup-list-input w-100 py-1"
+          type="text"
+          name="name"
+          ngModel
+        />
       </div>
     </div>
     <div class="row row-sm m-0 p-0 mt-4 w-100 d-flex justify-content-center">
       <div class="col-12 col-sm-6 col-lg-5">
-        <button
-          class="btn popup-content-confirm-button-2 w-100 px-3"
-        
-        >
+        <button class="btn popup-content-confirm-button-2 w-100 px-3">
           Confirm
         </button>
       </div>
