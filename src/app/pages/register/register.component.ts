@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpService } from '../http.service';
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'app-register',

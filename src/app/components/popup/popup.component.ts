@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
-import { HttpService } from '../http.service';
-import { PopupService } from '../popup.service';
+import { AuthService } from '../../services/auth.service';
+import { HttpService } from '../../services/http.service';
+import { PopupService } from '../../services/popup.service';
 
 @Component({
   selector: 'app-popup',

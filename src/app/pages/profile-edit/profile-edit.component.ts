@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthService } from '../auth.service';
-import { HttpService } from '../http.service';
+import { AuthService } from '../../services/auth.service';
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'app-profile-edit',

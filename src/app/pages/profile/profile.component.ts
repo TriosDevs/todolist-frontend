@@ -1,6 +1,6 @@
 import { Component,OnInit} from '@angular/core';
-import { HttpService } from '../http.service';
-import { PopupService } from '../popup.service';
+import { HttpService } from '../../services/http.service';
+import { PopupService } from '../../services/popup.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
