@@ -22,12 +22,20 @@
   border-style: solid;
   border-width: thin;
   background-color: #ffffff;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.task-tick-section-background {
+  background-color: #fff361;
 }
 
 .task-tick-checkbox-wrapper {
   width: 20px;
   height: 20px;
-  background-color: #fff361;
+  border-style: solid;
+  border-width: thin;
+  border-color: #3c4167;
 }
 .task-tick-checkbox {
   width: 20px;
@@ -44,4 +52,37 @@
 .task-content-wrapper {
   background-color: #fff361;
   border-radius: 30px;
+}
+
+.task-edit-img {
+  width: 25px;
+}
+
+.task-content-wrapper:hover + .task-edit-wrapper {
+  visibility: visible;
+}
+
+.task-edit-wrapper {
+  visibility: hidden;
+}
+
+.task-edit-dropdown {
+  margin-left: 190px;
+  white-space: nowrap;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.task-edit-img-wrapper{
+  visibility: hidden;
+}
+
+.task-dropdown{
+  
+  border-radius: 15px;
+}
+
+.task-dropdown:hover{
+  background-color: rgba(60, 65, 103, 0.14);
 }

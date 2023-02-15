@@ -13,6 +13,7 @@
 
 .list-dots{
   width: 20px;
+  cursor: pointer;
 }
 
 .task-content{
@@ -39,4 +40,21 @@
     margin-right: 0px;
     margin-top: 0px;
   }
+}
+
+.list-dots-dropdown{
+  cursor: pointer;
+}
+
+.list-dropdown{
+  
+  border-radius: 15px;
+}
+
+.list-dropdown:hover{
+  background-color: rgba(60, 65, 103, 0.14);
+}
+
+.each-list{
+  cursor: pointer;
 }

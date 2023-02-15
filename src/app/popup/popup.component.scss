@@ -16,6 +16,12 @@
   border-radius: 18px;
 }
 
+.popup-content-confirm-button-2 {
+  background-color: #587CF7;
+  color: #f1ebeb;
+  border-radius: 18px;
+}
+
 .popup-content-cancel-button {
   background-color: #f1ebeb;
   color: #ee2c2cd9;
@@ -23,4 +29,48 @@
   border-style: solid;
   border-width: thin;
   border-color: #ee2c2cd9;
+}
+
+.lists-confirm-btn{
+  background-color: #587CF7;
+  color: #f1ebeb;
+  border-radius: 18px;
+}
+
+.popup-list-descp{
+  color: #3c4167;
+}
+
+.popup-list-dot{
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: #3c4167;
+
+}
+
+.popup-list-line{
+  width: 100%;
+  height: 1px;
+  background-color: #3c4167;
+
+}
+
+.popup-list-input-wrapper{
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.20) 0px 4px 4px 0px;
+  border-style: solid;
+  border-width: thin;
+  border-color: #3C4167;
+}
+
+.popup-list-input{
+  outline: none;
+  border: 0;
+  background-color: #D9D9D9;
+  border-radius: 5px;
+}
+
+.popup-list-input-img{
+  width: 25px;
 }

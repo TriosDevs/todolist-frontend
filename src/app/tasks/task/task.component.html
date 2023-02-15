@@ -1,0 +1,68 @@
+<div class="task-component-wrapper">
+  <div class="task-header d-flex justify-content-sm-start align-items-center">
+    <div class="ms-4 task-dot"></div>
+    <div
+      class="list-content ms-2 py-2 fw-bold text-light d-flex align-items-center"
+    >
+      Lorem impsum dolor
+    </div>
+  </div>
+
+  <div class="row task-wrapper align-items-stretch m-0 p-0 mt-4 mt-4">
+    <div class="col-12 m-0 p-0">
+      <div class="row m-0 p-0 task-hover-action">
+        <div class="col-1 invisible"></div>
+      
+          <div
+          class="col-10 task-content-wrapper d-flex justify-content-between align-items-center m-0 p-0 "
+        >
+          <div class="task-content py-1 d-flex align-items-center">
+            <div class="mx-3">
+              Asadasdasdas sadsadsadsa d as d asd s ddsadas
+            </div>
+          </div>
+
+          <div
+            class="task-tick-section d-flex justify-content-center align-items-center py-3 align-self-stretch"
+          >
+            <div
+              [ngClass]="
+                taskStatus
+                  ? 'task-tick-checkbox-wrapper task-tick-section-background d-flex justify-content-center align-items-center'
+                  : 'task-tick-checkbox-wrapper d-flex justify-content-center align-items-center'
+              "
+              (click)="changeTaskStatus()"
+            >
+              <img
+                *ngIf="taskStatus"
+                class="task-tick-checkbox"
+                src="assets/images/check-mark.png"
+              />
+            </div>
+          </div>
+        </div>
+        <div role="button" (click)="openDropdown()"
+          class="col-1 task-edit-img-wrapper d-flex justify-content-center align-items-center position-relative"
+        >
+          <img
+            
+            class="task-edit-img"
+            src="assets/images/taskEdit.png"
+          />
+          <div *ngIf="dropdown"
+            class="task-edit-dropdown position-absolute align-self-start p-3 text-center"
+          >
+          <div class="list-dots-dropdown">
+            <div class="task-dropdown p-1 px-3">Edit</div>
+            <div class="task-dropdown p-1 px-3 mt-1">Remove</div>
+          </div>
+          </div>
+        </div>
+     
+        
+      </div>
+    </div>
+
+
+  </div>
+</div>

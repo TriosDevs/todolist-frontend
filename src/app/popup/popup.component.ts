@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { HttpService } from '../http.service';
@@ -35,6 +36,23 @@ export class PopupComponent implements OnInit {
         this.authService.logout();
         this.popupService.changePopupStatus(false);
         this.router.navigate(['/login']);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+
+  }
+
+  createList(form:NgForm) {
+    const data = {
+      name: form.value.name,
+    };
+    this.httpService.createHttpRequest('/api/list', 'POST', data).subscribe(
+      (res) => {
+        console.log(res);
+        this.popupService.changePopupStatus(false);
+        this.router.navigate(['/lists']);
       },
       (error) => {
         console.log(error);

@@ -31,7 +31,7 @@ export class LoginComponent {
           this.authService.setToken(res.content.toString());
           this.errorStatus = true;
           this.loadingIndicator = false;
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']);
         },
         (error) => {
           this.errorMessage = error;
