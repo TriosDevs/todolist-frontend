@@ -9,8 +9,8 @@
   </div>
   <div class="d-flex justify-content-end">
     <div *ngIf="dropdownStatus" class="list-dots-dropdown position-absolute p-3 ab text-center">
-      <div class="list-dropdown p-1 px-3">Edit</div>
-      <div class="list-dropdown p-1 px-3 mt-1">Remove</div>
+      <div class="list-dropdown p-1 px-3" (click)='openPopupForEditingList()'>Edit</div>
+      <div class="list-dropdown p-1 px-3 mt-1" (click)='openPopupForRemovingList()'>Remove</div>
     </div>
   </div>
 </div>

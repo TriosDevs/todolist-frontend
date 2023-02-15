@@ -12,6 +12,7 @@ import { PopupService } from '../../services/popup.service';
 })
 export class PopupComponent implements OnInit {
   popupStatus: boolean;
+  popupData: {};
 
   constructor(
     private popupService: PopupService,
@@ -20,16 +21,23 @@ export class PopupComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit() {
-    this.popupService.getMessage().subscribe((e) => {
-      this.popupStatus = e.text;
+    
+    this.popupService.getMessage().subscribe((data) => {
+      console.log(data)
+      this.popupStatus = data.status;
+      this.popupData = data;
     });
   }
 
-  changePopupStatus() {
-    this.popupService.changePopupStatus(false);
+  getPopupData(){
+
   }
 
-  removeAccount() {
+  changePopupStatus() {
+    this.popupService.changePopupStatus(false,'-','-');
+  }
+
+  /*removeAccount() {
     this.httpService.createHttpRequest('/api/user', 'DELETE', {}).subscribe(
       (res) => {
         console.log(res);
@@ -41,9 +49,9 @@ export class PopupComponent implements OnInit {
         console.log(error);
       }
     );
-  }
+  }*/
 
-  createList(form: NgForm) {
+  /*createList(form: NgForm) {
     const data = {
       name: form.value.name,
     };
@@ -57,7 +65,7 @@ export class PopupComponent implements OnInit {
         console.log(error);
       }
     );
-  }
+  }*/
 
   avoidClosing(e:Event){
     e.stopPropagation()

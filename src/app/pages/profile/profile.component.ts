@@ -12,7 +12,6 @@ export class ProfileComponent implements OnInit{
   email:string;
 
   constructor(private httpService:HttpService,private popupService:PopupService){
-    this.popupService.changePopupStatus(true);
   }
 
   ngOnInit(){
@@ -27,7 +26,7 @@ export class ProfileComponent implements OnInit{
   }
 
   openPopup(){
-      this.popupService.changePopupStatus(true);
+      this.popupService.changePopupStatus(true,'remove','profile');
   }
 
 }

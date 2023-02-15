@@ -1,7 +1,7 @@
 @import "../../../styles.scss";
 
 .task-component-wrapper {
-  background-color: #ffffff;
+  background-color: $white;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
 }
@@ -10,7 +10,7 @@
   width: 15px;
   height: 15px;
   border-radius: 100%;
-  background-color: #ffffff;
+  background-color: $white;
 }
 
 .task-header {
@@ -23,7 +23,7 @@
   border-radius: 30px 30px 30px 30px;
   border-style: solid;
   border-width: thin;
-  background-color: #ffffff;
+  background-color: $white;
   padding-left: 35px;
   padding-right: 35px;
 }
@@ -72,7 +72,7 @@
   margin-left: 190px;
   white-space: nowrap;
   border-radius: 15px;
-  background-color: #FFFFFF;
+  background-color: $white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 

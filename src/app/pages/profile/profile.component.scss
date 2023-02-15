@@ -9,13 +9,13 @@
 
 .profile-name{
   margin-top: 90px;
-  color: #3C4167;
+  color: $darkBlue;
 }
 
 .profile-content{
   z-index: 0;
   margin-top: 35px;
-  background-color: #FFFFFF;
+  background-color: $white;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
 }
@@ -23,13 +23,13 @@
 .profile-email-password{
   background-color: $darkBlue;
   font-weight: bold;
-  color: #FFFFFF;
+  color: $white;
   border-radius: 0px 20px 20px 0px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
 }
 
 .profile-email-password-descp{
-  background-color: #FFFFFF;
+  background-color: $white;
   border-radius: 20px 0px 0px 20px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
   border-style: solid;
@@ -40,11 +40,11 @@
 .profile-update-btn{
   background-color: $blue;
   border-radius: 18px;
-  color: #FFFFFF;
+  color: $white;
 }
 
 .profile-remove-btn{
   background-color: $warningButtonColor;
   border-radius: 18px;
-  color: #FFFFFF;
+  color: $white;
 }

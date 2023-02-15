@@ -5,8 +5,8 @@ import { Subject } from 'rxjs';
 export class PopupService {
   private subject = new Subject();
 
-  changePopupStatus(message: boolean) {
-    this.subject.next({ text: message });
+  changePopupStatus(_status: boolean,_type:string,_target:string) {
+    this.subject.next({ status: _status,type:_type,target:_target });
   }
 
   getMessage():any {

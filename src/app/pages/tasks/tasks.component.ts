@@ -10,6 +10,6 @@ export class TasksComponent {
   constructor(private popupService: PopupService) {}
 
   openPopup() {
-    this.popupService.changePopupStatus(true);
+    this.popupService.changePopupStatus(true,'create','task');
   }
 }

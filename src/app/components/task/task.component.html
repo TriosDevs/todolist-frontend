@@ -49,12 +49,12 @@
             class="task-edit-img"
             src="assets/images/taskEdit.png"
           />
-          <div *ngIf="dropdown"
+          <div *ngIf="dropdownStatus"
             class="task-edit-dropdown position-absolute align-self-start p-3 text-center"
           >
           <div class="list-dots-dropdown">
-            <div class="task-dropdown p-1 px-3">Edit</div>
-            <div class="task-dropdown p-1 px-3 mt-1">Remove</div>
+            <div class="task-dropdown p-1 px-3" (click)='openPopupForEditingTask()'>Edit</div>
+            <div class="task-dropdown p-1 px-3 mt-1" (click)='openPopupForRemovingTask()'>Remove</div>
           </div>
           </div>
         </div>

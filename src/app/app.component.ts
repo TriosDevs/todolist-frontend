@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, DoCheck, ElementRef} from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { PopupService } from './services/popup.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { AuthService } from './services/auth.service';
 export class AppComponent{
   auth:boolean;;
   differ:any;
-  constructor(private authService: AuthService,private elementRef: ElementRef) {
+  constructor(private authService: AuthService,private elementRef: ElementRef,private popupService: PopupService) {
       this.auth = authService.loggedIn;
   }
   ngDoCheck() {
@@ -20,5 +21,14 @@ export class AppComponent{
       .body.style.backgroundColor = '#F1EBEB';
     this.elementRef.nativeElement.ownerDocument
       .body.style.userSelect = 'none';
+      this.popupService.getMessage().subscribe(e=>{
+        if (e.status){
+          this.elementRef.nativeElement.ownerDocument
+      .body.style.overflow = 'hidden';
+        }else{
+          this.elementRef.nativeElement.ownerDocument
+      .body.style.overflow = 'inherit';
+        }
+      })
   }
 }
