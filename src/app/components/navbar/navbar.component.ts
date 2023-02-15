@@ -1,23 +1,38 @@
-import { Component,Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  active:boolean = false
-  searchInput:boolean;
-  constructor(private authService: AuthService){}
-  activeNavLink(){
-    this.active = !this.active
-  }
-  onLogout(){
+  searchInput: boolean;
+  constructor(private authService: AuthService) {}
+
+  onLogout() {
     this.authService.logout();
   }
-  onSwitch(){
-    this.searchInput = !this.searchInput
+  @HostListener('document:click', ['$event.target'])
+  onClick(element: HTMLElement) {
+    console.log(element);
+    if (element.classList.contains('ddown')) {
+      console.log($('.navbar-dropdown').hasClass('show'));
+      if (!$('.navbar-dropdown').hasClass('show')) {
+        $('.navbar-dropdown').addClass('show');
+        $('.dropdown-wrapper').addClass('show-hover');
+      } else {
+        $('.navbar-dropdown').removeClass('show');
+        $('.dropdown-wrapper').removeClass('show-hover');
+      }
+    } else {
+      $('.navbar-dropdown').removeClass('show');
+      $('.dropdown-wrapper').removeClass('show-hover');
+    }
+  }
+
+  onSwitch() {
+    this.searchInput = !this.searchInput;
   }
 }
-

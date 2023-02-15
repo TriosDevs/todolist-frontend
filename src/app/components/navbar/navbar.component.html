@@ -18,16 +18,15 @@
         class="navbar-link" src="assets/images/home.png"/></div>
       <div class="navbar-link-hover mx-md-5 mx-lg-4 p-2 d-flex justify-content-center align-items-center" routerLink="/list"><img
         class="navbar-link" src="assets/images/clipboard.png"/></div>
-      <div [ngClass]="active ? 'navbar-link-hover p-2 d-flex justify-content-center align-items-center navbar-link-profile-background' : 'navbar-link-hover p-2 d-flex justify-content-center align-items-center'" (click) = "activeNavLink()" >
-        <div class="d-flex flex-column align-items-lg-center align-items-end position-relative">
-          <img class="navbar-link position-relative" src="assets/images/user.png"/>
-          <div *ngIf="active" class="navbar-dropdown position-absolute top-0 mt-5 p-3">
+      <div class='navbar-link-hover p-2 d-flex justify-content-center align-items-center dropdown-wrapper'>
+        <div class="d-flex flex-column align-items-lg-center align-items-end position-relative ">
+          <img class="navbar-link position-relative ddown" src="assets/images/user.png"/>
+          <div class="navbar-dropdown position-absolute top-0 mt-5 p-3">
             <div class="each-link navbar-dropdown-link p-1 px-4" routerLink="/profile">Profile</div>
             <div class="each-link navbar-dropdown-middleLine my-2"></div>
             <div class="each-link navbar-dropdown-link p-1 px-4" routerLink="/login" (click)="onLogout()">Log out</div>
           </div>
         </div>
-
       </div>
 
     </div>

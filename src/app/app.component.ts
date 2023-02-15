@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, DoCheck, ElementRef} from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { PopupService } from './services/popup.service';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -30,5 +30,6 @@ export class AppComponent{
       .body.style.overflow = 'inherit';
         }
       })
+      
   }
 }
