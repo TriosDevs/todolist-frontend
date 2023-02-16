@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ErrorModalComponent } from './error-modal.component';
+import { SuccessMessageComponent } from './success-message.component';
 
-describe('ErrorModalComponent', () => {
-  let component: ErrorModalComponent;
-  let fixture: ComponentFixture<ErrorModalComponent>;
+describe('SuccessMessageComponent', () => {
+  let component: SuccessMessageComponent;
+  let fixture: ComponentFixture<SuccessMessageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ErrorModalComponent ]
+      declarations: [ SuccessMessageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ErrorModalComponent);
+    fixture = TestBed.createComponent(SuccessMessageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

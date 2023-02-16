@@ -28,6 +28,7 @@
 }
 
 .list-dots-dropdown{
+  display: none;
   margin-right: -110px;
   margin-top: -20px;
   white-space: nowrap;
@@ -58,4 +59,8 @@
 
 .each-list{
   cursor: pointer;
+}
+
+.show{
+  display: block;
 }

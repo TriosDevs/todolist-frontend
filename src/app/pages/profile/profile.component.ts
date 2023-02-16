@@ -10,16 +10,22 @@ export class ProfileComponent implements OnInit{
   name:string;
   surname:string;
   email:string;
+  isLoading:boolean;
 
   constructor(private httpService:HttpService,private popupService:PopupService){
   }
 
   ngOnInit(){
+    this.isLoading = true;
     this.httpService.createHttpRequest('/api/user',"GET",{}).subscribe(res =>{
       console.log(res);
-      this.name = res.firstName;
+      setTimeout(()=>{
+        this.name = res.firstName;
       this.surname = res.lastName;
       this.email = res.mail;
+      this.isLoading =false
+      },2000)
+      
     },error =>{
       console.log(error);
     })

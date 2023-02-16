@@ -10,15 +10,16 @@ import { HttpService } from '../../services/http.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  errorMessage:string;
+  successMessage:{message:string,status:boolean}={
+    message: '',
+    status: false
+  };
   errorStatus:boolean = false
   loadingIndicator:boolean = false;
   constructor(private httpService: HttpService,private router: Router,private authService:AuthService) {}
 
   onSubmit(form: NgForm) {
-    /*const headers = new HttpHeaders({
-      'Content-Type': 'application/json; charset=utf-8',
-    });*/
+
     this.loadingIndicator = true;
     setTimeout(()=>{
 
@@ -29,13 +30,15 @@ export class LoginComponent {
       this.httpService.createHttpRequest('/auth/login', 'POST', data).subscribe(
         (res) => {
           this.authService.setToken(res.content.toString());
-          this.errorStatus = true;
-          this.loadingIndicator = false;
+          this.successMessage.message = '';
+          this.successMessage.status = false;
+          console.log('login-page ' + (new Date()).getTime());
           this.router.navigate(['/']);
+          
         },
         (error) => {
-          this.errorMessage = error;
-          this.errorStatus = true;
+          this.successMessage.message = error;
+          this.successMessage.status = true;
           this.loadingIndicator = false;
   
         }

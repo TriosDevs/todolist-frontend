@@ -9,14 +9,16 @@ import * as $ from 'jquery';
 })
 export class NavbarComponent {
   searchInput: boolean;
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) {
+
+  }
 
   onLogout() {
     this.authService.logout();
   }
   @HostListener('document:click', ['$event.target'])
   onClick(element: HTMLElement) {
-    console.log(element);
+    //console.log(element);
     if (element.classList.contains('ddown')) {
       console.log($('.navbar-dropdown').hasClass('show'));
       if (!$('.navbar-dropdown').hasClass('show')) {
@@ -34,5 +36,9 @@ export class NavbarComponent {
 
   onSwitch() {
     this.searchInput = !this.searchInput;
+  }
+
+  ngAfterViewInit() {
+
   }
 }

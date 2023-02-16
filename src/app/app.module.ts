@@ -15,7 +15,6 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { HttpService } from './services/http.service';
-import { ErrorModalComponent } from './components/error-modal/error-modal.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
 import { ListsComponent } from './pages/lists/lists.component';
@@ -24,6 +23,7 @@ import { PopupRemoveContentComponent } from './components/popup/popup-remove-con
 import { PopupCreateContentComponent } from './components/popup/popup-create-content/popup-create-content.component';
 import { PopupUpdateContentComponent } from './components/popup/popup-update-content/popup-update-content.component';
 import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
+import { SuccessMessageComponent } from './components/success-message/success-message.component';
 const appRoutes: Routes =[
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
@@ -48,7 +48,6 @@ const appRoutes: Routes =[
     HomeComponent,
     ProfileComponent,
     PageNotFoundComponent,
-    ErrorModalComponent,
     PopupComponent,
     ProfileEditComponent,
     ListsComponent,
@@ -56,6 +55,7 @@ const appRoutes: Routes =[
     PopupCreateContentComponent,
     PopupUpdateContentComponent,
     LoadingIndicatorComponent,
+    SuccessMessageComponent,
   ],
   imports: [
     BrowserModule,
