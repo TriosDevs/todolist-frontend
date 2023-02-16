@@ -23,6 +23,7 @@ import { TasksComponent } from './pages/tasks/tasks.component';
 import { PopupRemoveContentComponent } from './components/popup/popup-remove-content/popup-remove-content.component';
 import { PopupCreateContentComponent } from './components/popup/popup-create-content/popup-create-content.component';
 import { PopupUpdateContentComponent } from './components/popup/popup-update-content/popup-update-content.component';
+import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
 const appRoutes: Routes =[
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
@@ -54,6 +55,7 @@ const appRoutes: Routes =[
     PopupRemoveContentComponent,
     PopupCreateContentComponent,
     PopupUpdateContentComponent,
+    LoadingIndicatorComponent,
   ],
   imports: [
     BrowserModule,
