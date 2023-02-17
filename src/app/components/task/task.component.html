@@ -10,7 +10,7 @@
 
   <div class="row task-wrapper align-items-stretch m-0 p-0 mt-4 mt-4">
     <div class="col-12 m-0 p-0">
-      <div class="row m-0 p-0 task-hover-action">
+      <div id='sample' class="row m-0 p-0 task-hover-action ">
         <div class="col-1 invisible"></div>
       
           <div
@@ -41,15 +41,14 @@
             </div>
           </div>
         </div>
-        <div role="button" (click)="openDropdown()"
+        <div  role="button"
           class="col-1 task-edit-img-wrapper d-flex justify-content-center align-items-center position-relative"
         >
           <img
-            
             class="task-edit-img"
             src="assets/images/taskEdit.png"
           />
-          <div *ngIf="dropdownStatus"
+          <div 
             class="task-edit-dropdown position-absolute align-self-start p-3 text-center"
           >
           <div class="list-dots-dropdown">

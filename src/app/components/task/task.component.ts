@@ -16,18 +16,6 @@ export class TaskComponent {
     this.taskStatus = !this.taskStatus;
   }
 
-  ngAfterViewInit() {
-    $('.task-hover-action')
-      .mouseenter(() => {
-        $('.task-edit-img-wrapper').addClass('visible');
-      })
-      .mouseleave(() => {
-        if (!this.dropdownStatus) {
-          $('.task-edit-img-wrapper').removeClass('visible');
-        }
-      });
-  }
-
   openDropdown() {
     this.dropdownStatus = !this.dropdownStatus;
   }

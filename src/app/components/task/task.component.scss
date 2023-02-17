@@ -69,6 +69,7 @@
 }
 
 .task-edit-dropdown {
+  visibility: hidden;
   margin-left: 190px;
   white-space: nowrap;
   border-radius: 15px;
@@ -87,4 +88,12 @@
 
 .task-dropdown:hover{
   background-color: rgba(60, 65, 103, 0.14);
+}
+
+.task-hover-action:hover > .task-edit-img-wrapper{
+  visibility: visible;
+}
+
+.show{
+  visibility: visible;
 }
