@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+.task-create-button {
+  background-color: #FFF361;
+  color: #3C4167;
+  border-radius: 20px 0px 0px 20px;
+  font-size: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px, rgba(0, 0, 0, 0.15) 0px 5px 5px;
+}
+
+.list-wrapper {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
+}
+
+.list-header {
+  border-radius: 15px;
+  background-color: #3C4167;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
+}
+
+.list-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #ffffff;
+}

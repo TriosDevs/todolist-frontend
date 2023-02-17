@@ -1,24 +1,5 @@
 @import "../../../styles.scss";
 
-.task-component-wrapper {
-  background-color: $white;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
-}
-
-.task-dot {
-  width: 15px;
-  height: 15px;
-  border-radius: 100%;
-  background-color: $white;
-}
-
-.task-header {
-  border-radius: 15px;
-  background-color: $darkBlue;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
-}
-
 .task-tick-section {
   border-radius: 30px 30px 30px 30px;
   border-style: solid;
@@ -96,4 +77,17 @@
 
 .show{
   visibility: visible;
+
 }
+
+@media screen and (max-width: 1210px) {
+  .task-edit-dropdown {
+    margin-left: 0px;
+    margin-right: 80px;
+    margin-top: 75px;
+
+  }
+}
+
+
+
