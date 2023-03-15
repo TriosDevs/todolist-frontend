@@ -1,0 +1,23 @@
+.gradient-animation {
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  background: linear-gradient(
+    315deg,
+    rgba(74, 145, 215, 0.8) 38%,
+    rgba(52, 204, 50, 1) 68%,
+    rgb(48, 238, 226) 98%
+  );
+  animation: gradient 2s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}

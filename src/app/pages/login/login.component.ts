@@ -7,44 +7,42 @@ import { HttpService } from '../../services/http.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  successMessage:{message:string,status:boolean}={
-    message: '',
-    status: false
-  };
-  errorStatus:boolean = false
-  loadingIndicator:boolean = false;
-  constructor(private httpService: HttpService,private router: Router,private authService:AuthService) {}
+  errorMessage:string;
+  errorStatus: boolean = false;
+  loadingIndicator: boolean = false;
+  constructor(
+    private httpService: HttpService,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   onSubmit(form: NgForm) {
-
+    this.errorStatus = false;
     this.loadingIndicator = true;
-    setTimeout(()=>{
-
+    setTimeout(() => {
       const data = {
-        mail: form.value.email,
+        email: form.value.email,
         password: form.value.password,
       };
-      this.httpService.createHttpRequest('/auth/login', 'POST', data).subscribe(
+      this.httpService.createHttpRequest('auth/login', 'POST', data).subscribe(
         (res) => {
-          this.authService.setToken(res.content.toString());
-          this.successMessage.message = '';
-          this.successMessage.status = false;
-          console.log('login-page ' + (new Date()).getTime());
+          console.log(res);
+          this.authService.setToken(res.jwtToken);
+          this.loadingIndicator = false;
+          this.errorStatus = false;
           this.router.navigate(['/']);
-          
+
         },
         (error) => {
-          this.successMessage.message = error;
-          this.successMessage.status = true;
+          console.log(error);
+          this.errorStatus = true;
           this.loadingIndicator = false;
-  
+          this.errorMessage = error.errors[0].message;
         }
       );
-  
-    }, 3000)
-
+    }, 3000);
   }
 }

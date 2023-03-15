@@ -7,8 +7,4 @@ import { Component,Input } from '@angular/core';
 })
 export class SuccessMessageComponent {
   @Input() message:{message:string,status:boolean};
-
-  ngOnInit(){
-    console.log('called');
-  }
 }

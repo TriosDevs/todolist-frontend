@@ -9,13 +9,14 @@ import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class HttpService {
-  baseURL: string = 'https://todolist-api.oguzhanercelik.dev';
+  baseURL: string = 'https://todolist-api.oguzhanercelik.dev/';
+  //baseURL: string = 'http://localhost:8080/';
   constructor(private http: HttpClient, private authService: AuthService) {}
 
   createHttpRequest(endpoint: string, requestType: string, data: object) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.authService.token}`,
+      Authorization: `${this.authService.token}`,
     });
 
     const requestOptions = { headers: headers };
@@ -47,7 +48,6 @@ export class HttpService {
     if (!errorRes.error) {
       return throwError(errorMessage);
     }
-    errorMessage = errorRes.error.message;
-    return throwError(errorMessage);
+    return throwError(errorRes.error);
   }
 }

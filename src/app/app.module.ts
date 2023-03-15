@@ -24,6 +24,7 @@ import { PopupUpdateContentComponent } from './components/popup/popup-update-con
 import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
 import { SuccessMessageComponent } from './components/success-message/success-message.component';
 import { DetailedListComponent } from './components/detailed-list/detailed-list.component';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
 const appRoutes: Routes =[
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
@@ -56,6 +57,7 @@ const appRoutes: Routes =[
     LoadingIndicatorComponent,
     SuccessMessageComponent,
     DetailedListComponent,
+    ErrorMessageComponent,
   ],
   imports: [
     BrowserModule,
