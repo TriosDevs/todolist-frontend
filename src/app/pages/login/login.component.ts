@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,23 +11,25 @@ import { HttpService } from '../../services/http.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  errorMessage:string;
+  errorMessage: string;
   errorStatus: boolean = false;
   loadingIndicator: boolean = false;
   constructor(
     private httpService: HttpService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private http: HttpClient
   ) {}
 
   onSubmit(form: NgForm) {
     this.errorStatus = false;
     this.loadingIndicator = true;
+    const data = {
+      email: form.value.email,
+      password: form.value.password,
+    };
+
     setTimeout(() => {
-      const data = {
-        email: form.value.email,
-        password: form.value.password,
-      };
       this.httpService.createHttpRequest('auth/login', 'POST', data).subscribe(
         (res) => {
           console.log(res);
@@ -34,7 +37,6 @@ export class LoginComponent {
           this.loadingIndicator = false;
           this.errorStatus = false;
           this.router.navigate(['/']);
-
         },
         (error) => {
           console.log(error);

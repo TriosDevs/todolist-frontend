@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.isLoading = true;
-    this.httpService.createHttpRequest('/api/list', 'GET', {}).subscribe(
+    this.httpService.createHttpRequest('api/v1/lists', 'GET', {}).subscribe(
       
       (res) => {
         setTimeout(()=>{

@@ -1,6 +1,6 @@
 <div class="row m-0 p-0 d-flex justify-content-center align-items-center mt-5">
   <div
-    class="col-10 col-sm-8 col-md-8 col-lg-4 position-relative d-flex flex-column align-items-center"
+    class="col-10 col-sm-8 col-md-8 col-lg-4 position-relative d-flex flex-column align-items-center "
   >
   <div *ngIf="isLoading; else loadData" class="d-flex justify-content-center align-items-center mt-5">
     <app-loading-indicator></app-loading-indicator>
@@ -11,7 +11,7 @@
   >
     <img class="w-50" src="assets/images/user.png" />
   </div>
-  <div class="col-12 profile-content position-absolute">
+  <div class="col-12 profile-content position-absolute pb-5">
     <div class="profile-name fw-bold text-center fs-3">
       {{ name }} {{ surname }}
     </div>
@@ -24,26 +24,6 @@
         Password
       </div>
       <div class="col-8 profile-email-password-descp py-2">*****</div>
-    </div>
-    <div class="row d-flex justify-content-end p-0 m-0 mt-5">
-      <div class="col-12 col-sm-5 col-md-5 col-lg-4">
-        <button
-          class="btn profile-update-btn d-flex justify-content-center align-items-center px-5 w-100"
-          routerLink="/profile-edit"
-        >
-          Edit
-        </button>
-      </div>
-    </div>
-    <div class="row d-flex justify-content-end p-0 m-0 mt-2 mb-4">
-      <div class="col-12 col-sm-5 col-md-5 col-lg-4">
-        <button
-          class="btn profile-remove-btn d-flex justify-content-center align-items-center px-5 w-100"
-          (click)="openPopup()"
-        >
-          Remove
-        </button>
-      </div>
     </div>
   </div>
   </ng-template>

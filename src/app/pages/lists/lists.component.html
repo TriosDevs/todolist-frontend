@@ -1,55 +1,10 @@
 <div>
-  
-    <div class="d-flex justify-content-end align-items-center mt-5"><button class="btn lists-button px-5" (click)="openPopup()">Create a list</button></div>
-  <div class="row p-0 m-0 mt-4">
-    <div class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center">
-      <div class="col-8 col-sm-10 col-md-8 m-2">
-        <div><app-list></app-list></div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center">
-      <div class="col-8 col-sm-10 col-md-8 m-2">
-        <div><app-list></app-list></div>
-      </div>
-    </div>
+  <div class="d-flex justify-content-end align-items-center mt-5">
+    <button class="btn lists-button px-5" (click)="openPopup()">
+      Create a list
+    </button>
   </div>
-  <div class="row p-0 m-0 mt-4">
-    <div class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center">
-      <div class="col-8 col-sm-10 col-md-8 m-2">
-        <div><app-list></app-list></div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center">
-      <div class="col-8 col-sm-10 col-md-8 m-2">
-        <div><app-list></app-list></div>
-      </div>
-    </div>
-  </div>
-  <div class="row p-0 m-0 mt-4">
-    <div class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center">
-      <div class="col-8 col-sm-10 col-md-8 m-2">
-        <div><app-list></app-list></div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center">
-      <div class="col-8 col-sm-10 col-md-8 m-2">
-        <div><app-list></app-list></div>
-      </div>
-    </div>
-  </div>
-  <div class="row p-0 m-0 mt-4">
-    <div class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center">
-      <div class="col-8 col-sm-10 col-md-8 m-2">
-        <div><app-list></app-list></div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center">
-      <div class="col-8 col-sm-10 col-md-8 m-2">
-        <div><app-list></app-list></div>
-      </div>
-    </div>
-  </div>
-  <div class="row p-0 m-0 mt-4">
+  <div *ngFor="let list of lists" class="row p-0 m-0 mt-4">
     <div class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center">
       <div class="col-8 col-sm-10 col-md-8 m-2">
         <div><app-list></app-list></div>

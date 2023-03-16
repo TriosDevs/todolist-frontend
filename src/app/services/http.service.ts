@@ -16,29 +16,28 @@ export class HttpService {
   createHttpRequest(endpoint: string, requestType: string, data: object) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `${this.authService.token}`,
+      'Authorization': `${this.authService.token}`,
     });
 
-    const requestOptions = { headers: headers };
+    const requestHeaders = { headers: headers };
+    console.log(data);
     switch (requestType.toUpperCase()) {
       case 'POST':
         return this.http
-          .post<any>(this.baseURL + endpoint, data)
+          .post<any>(this.baseURL + endpoint, data, requestHeaders)
           .pipe(catchError(this.handleError));
-
       case 'GET':
         return this.http
-          .get(this.baseURL + endpoint, requestOptions)
+          .get(this.baseURL + endpoint, requestHeaders)
           .pipe(catchError(this.handleError));
-
       case 'PUT':
         return this.http
-          .put(this.baseURL + endpoint, requestOptions, data)
+          .put(this.baseURL + endpoint, data, requestHeaders)
           .pipe(catchError(this.handleError));
 
       case 'DELETE':
         return this.http
-          .delete(this.baseURL + endpoint,requestOptions)
+          .delete(this.baseURL + endpoint, requestHeaders)
           .pipe(catchError(this.handleError));
     }
   }

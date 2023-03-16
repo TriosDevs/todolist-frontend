@@ -16,7 +16,6 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { HttpService } from './services/http.service';
 import { PopupComponent } from './components/popup/popup.component';
-import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
 import { ListsComponent } from './pages/lists/lists.component';
 import { PopupRemoveContentComponent } from './components/popup/popup-remove-content/popup-remove-content.component';
 import { PopupCreateContentComponent } from './components/popup/popup-create-content/popup-create-content.component';
@@ -32,7 +31,6 @@ const appRoutes: Routes =[
   {path:'lists',canActivate:[AuthGuard],component:ListsComponent},
   {path:'lists/:id'/*,canActivate:[AuthGuard]*/,component:DetailedListComponent},
   {path:'profile'/*,canActivate:[AuthGuard]*/,component:ProfileComponent},
-  {path:'profile-edit'/*,canActivate:[AuthGuard]*/,component:ProfileEditComponent},
   {path:'not-found',component:PageNotFoundComponent},
   {path:'**',redirectTo:'/not-found'}
 ]
@@ -49,7 +47,6 @@ const appRoutes: Routes =[
     ProfileComponent,
     PageNotFoundComponent,
     PopupComponent,
-    ProfileEditComponent,
     ListsComponent,
     PopupRemoveContentComponent,
     PopupCreateContentComponent,

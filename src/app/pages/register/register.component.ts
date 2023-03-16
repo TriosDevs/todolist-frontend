@@ -19,14 +19,12 @@ export class RegisterComponent {
     this.errorStatus = false;
     this.loadingIndicator = true;
     setTimeout(()=>{
-
       if (form.value.password != form.value.passwordAgain){
         this.errorMessage = 'Passwords do not matches!';
         this.errorStatus = true;
         this.loadingIndicator = false;
         return;
       }
-
       const data = {   
         firstName: form.value.firstName,
         lastName: form.value.lastName,
@@ -45,12 +43,9 @@ export class RegisterComponent {
           this.errorStatus = true;
           this.loadingIndicator = false;
           this.errorMessage = error.errors[0].message;
-          
-  
         }
       );
   
     }, 3000)
-
   }
 }

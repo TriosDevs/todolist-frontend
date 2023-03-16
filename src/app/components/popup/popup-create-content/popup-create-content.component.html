@@ -48,11 +48,12 @@ class="d-none popup-content-wrapper d-flex flex-column justify-content-center al
 </form>
 --->
 
+<form (ngSubmit)="createList(f)" #f="ngForm">
   <div
     class="popup-list-descp d-flex justify-self-center align-self-start align-items-center"
   >
     <div class="popup-list-dot"></div>
-    <div class="ms-1">{{header}}</div>
+    <div class="ms-1">{{ header }}</div>
   </div>
   <div class="popup-list-line mt-1"></div>
   <div class="popup-list-input-wrapper row py-2 px-2 mt-3 mb-5 mx-1">
@@ -78,12 +79,10 @@ class="d-none popup-content-wrapper d-flex flex-column justify-content-center al
 
   <div class="row row-sm m-0 p-0 mt-4 w-100 d-flex justify-content-center">
     <div class="col-12 col-sm-6 col-lg-5">
-      <button
-        class="btn popup-create-content-button w-100 px-3"
-        
-      >
-        Confirm
+      <button [disabled]="loadingIndicator" class="btn popup-create-content-button w-100 px-3">
+        <div class="spinner-border" role="status" *ngIf="loadingIndicator"></div>
+        <div *ngIf="!loadingIndicator">Confirm</div>
       </button>
     </div>
   </div>
-
+</form>
