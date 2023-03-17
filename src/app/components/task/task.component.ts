@@ -22,11 +22,11 @@ export class TaskComponent {
 
   openPopupForEditingTask() {
     this.dropdownStatus = !this.dropdownStatus;
-    this.popupSerive.changePopupStatus(true, 'update', 'task');
+    this.popupSerive.changePopupStatus(true, 'update', 'task',{});
   }
 
   openPopupForRemovingTask() {
     this.dropdownStatus = !this.dropdownStatus;
-    this.popupSerive.changePopupStatus(true, 'remove', 'task');
+    this.popupSerive.changePopupStatus(true, 'remove', 'task',{});
   }
 }

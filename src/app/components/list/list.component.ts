@@ -1,31 +1,50 @@
-import { Component,EventEmitter,Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PopupService } from 'src/app/services/popup.service';
 import * as $ from 'jquery';
+import { HttpService } from 'src/app/services/http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
-  //encapsulation:ViewEncapsulation.Emulated
 })
 export class ListComponent {
-  dropdownStatus:boolean;
+  @Input() list: { id: number; name: string; createdAt: string; count: number };
 
-  constructor(private popupSerive:PopupService){}
+  constructor(
+    private popupService: PopupService,
+    private httpService: HttpService,
+    private router: Router
+  ) {}
 
-  onChangeStatusOfDotsDropdown() {
-    console.log(this.dropdownStatus);
-    //this.dropdownStatus = !this.dropdownStatus;
+  ngOnInit() {
+    this.httpService.createHttpRequest('api/v1/tasks/', 'GET', {}).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
-  openPopupForEditingList(){
-    //this.dropdownStatus = !this.dropdownStatus;
-    this.popupSerive.changePopupStatus(true,'update','list')
+  editList() {
+    this.popupService.changePopupStatus(true, 'update', 'list', {
+      id: this.list.id,
+    });
   }
 
-  openPopupForRemovingList(){
-    //this.dropdownStatus = !this.dropdownStatus;
-    this.popupSerive.changePopupStatus(true,'remove','list')
+  removeList() {
+    this.popupService.changePopupStatus(true, 'remove', 'list', {
+      id: this.list.id,
+    });
   }
 
+  openTask() {
+    this.router.navigate(['/lists/' + this.list.id]);
+  }
+  avoidPropgtn(event: Event) {
+    event.stopPropagation();
+  }
 }

@@ -9,12 +9,39 @@
     </div>
     <div class="home-top-line position-absolute"></div>
   </div>
-<div *ngIf="isLoading" class="d-flex justify-content-center align-items-center mt-5">
-  <app-loading-indicator></app-loading-indicator>
-</div>
-  <div *ngIf="informationAboutList"
+  <div
+    *ngIf="isLoading"
+    class="d-flex justify-content-center align-items-center mt-5"
+  >
+    <app-loading-indicator></app-loading-indicator>
+  </div>
+  <div
+    *ngIf="informationAboutList"
     class="home-unAvailable-list d-flex justify-content-center align-items-center mt-5 pt-5 px-5 fw-bold text-center"
   >
     Currently, you don’t have any lists. Firstly, create a list on List Page!
+  </div>
+
+  <div
+    *ngIf="!informationAboutList && !isLoading"
+    class="row m-0 p-0 d-flex justify-content-center align-items-center mt-5"
+  >
+    <div
+      class="col-10 col-sm-8 col-md-9 col-lg-7 col-xl-5 list-wrapper m-0 p-0"
+    >
+      <div
+        class="list-header d-flex justify-content-sm-start align-items-center"
+      >
+        <div class="ms-4 list-dot"></div>
+        <div
+          class="list-content ms-2 py-2 fw-bold text-light d-flex align-items-center"
+        >
+          Lorem impsum dolor
+        </div>
+      </div>
+      <div class="d-flex justify-content-center align-items-center mt-4 mb-4">
+        <div class="w-100"><app-task></app-task></div>
+      </div>
+    </div>
   </div>
 </div>

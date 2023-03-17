@@ -11,29 +11,21 @@ import { PopupService } from '../../services/popup.service';
 export class HomeComponent implements OnInit {
   list = [];
   informationAboutList: boolean = false;
-  isLoading:boolean;
-  constructor(
-    private httpService: HttpService,
-    private popupService: PopupService
-  ) {
-
-  }
+  isLoading: boolean;
+  constructor(private httpService: HttpService) {}
 
   ngOnInit() {
     this.isLoading = true;
     this.httpService.createHttpRequest('api/v1/lists', 'GET', {}).subscribe(
-      
       (res) => {
-        setTimeout(()=>{
-          console.log(res);
-          res.content = this.list;
+        setTimeout(() => {
+          this.list = res;
           if (this.list.length == 0) {
             this.informationAboutList = true;
           }
 
           this.isLoading = false;
-        },2000)
-       
+        }, 2000);
       },
       (error) => {
         console.log(error);

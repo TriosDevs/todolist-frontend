@@ -11,7 +11,7 @@ export class DetailedListComponent {
   constructor(private popupService: PopupService) {}
 
   openPopup() {
-    this.popupService.changePopupStatus(true,'create','task');
+    this.popupService.changePopupStatus(true,'create','task',{});
   }
 
 }

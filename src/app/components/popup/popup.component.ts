@@ -34,7 +34,7 @@ export class PopupComponent implements OnInit {
   }
 
   changePopupStatus() {
-    this.popupService.changePopupStatus(false,'-','-');
+    this.popupService.changePopupStatus(false,'-','-',{});
   }
 
   /*removeAccount() {

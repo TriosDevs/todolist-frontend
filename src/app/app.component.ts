@@ -49,6 +49,8 @@ export class AppComponent {
 
   @HostListener('document:click', ['$event.target'])
   onClick(element: HTMLElement) {
+
+    
     // for list dropdown
     if (element.classList.contains('list-dots')) {
       let dropdown =
@@ -92,5 +94,6 @@ export class AppComponent {
       $('.task-edit-dropdown').removeClass('show');
       $('.task-edit-img').removeClass('show');
     }
+
   }
 }

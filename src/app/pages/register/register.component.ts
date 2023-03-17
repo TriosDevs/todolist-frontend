@@ -10,42 +10,57 @@ import { HttpService } from '../../services/http.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
-  errorStatus:boolean = false
-  loadingIndicator:boolean = false;
-  errorMessage:string;
-  constructor(private httpService: HttpService,private router: Router) {}
+  errorStatus: boolean = false;
+  loadingIndicator: boolean = false;
+  errorMessage: string;
+  constructor(private httpService: HttpService, private router: Router) {}
 
   onSubmit(form: NgForm) {
     this.errorStatus = false;
     this.loadingIndicator = true;
-    setTimeout(()=>{
-      if (form.value.password != form.value.passwordAgain){
-        this.errorMessage = 'Passwords do not matches!';
-        this.errorStatus = true;
-        this.loadingIndicator = false;
-        return;
-      }
-      const data = {   
-        firstName: form.value.firstName,
-        lastName: form.value.lastName,
-        email: form.value.email,
-        password: form.value.password,
-      };
-      this.httpService.createHttpRequest('auth/register', 'POST', data).subscribe(
-        (res) => {
-          console.log(res)
-          this.loadingIndicator = false;
-          this.errorStatus = false;
-          this.router.navigate(['/login']);
-        },
-        (error) => {
-          console.log(error.errors[0].message)
-          this.errorStatus = true;
-          this.loadingIndicator = false;
-          this.errorMessage = error.errors[0].message;
-        }
-      );
-  
-    }, 3000)
+
+    const data = {
+      firstName: form.value.firstName.trim(),
+      lastName: form.value.lastName.trim(),
+      email: form.value.email.trim(),
+      password: form.value.password.trim(),
+    };
+
+    if (
+      data.firstName.length == 0 ||
+      data.lastName.length == 0 ||
+      data.email.length == 0 ||
+      data.password.length == 0 ||
+      form.value.passwordAgain.trim().length == 0
+    ) {
+      this.errorMessage = 'All areas must be filled!';
+      this.errorStatus = true;
+      this.loadingIndicator = false;
+      return;
+    }
+
+    if (data.password != form.value.passwordAgain.trim()) {
+      this.errorMessage = 'Passwords do not matches!';
+      this.errorStatus = true;
+      this.loadingIndicator = false;
+      return;
+    }
+
+    setTimeout(() => {
+      this.httpService
+        .createHttpRequest('auth/register', 'POST', data)
+        .subscribe(
+          (res) => {
+            this.loadingIndicator = false;
+            this.errorStatus = false;
+            this.router.navigate(['/login']);
+          },
+          (error) => {
+            this.errorStatus = true;
+            this.loadingIndicator = false;
+            this.errorMessage = 'Email is already taken!';
+          }
+        );
+    }, 2500);
   }
 }

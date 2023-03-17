@@ -36,6 +36,6 @@ export class ProfileComponent implements OnInit {
   }
 
   openPopup() {
-    this.popupService.changePopupStatus(true, 'remove', 'profile');
+    this.popupService.changePopupStatus(true, 'remove', 'profile',{});
   }
 }

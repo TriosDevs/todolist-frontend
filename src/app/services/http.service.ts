@@ -10,7 +10,6 @@ import { AuthService } from './auth.service';
 @Injectable({ providedIn: 'root' })
 export class HttpService {
   baseURL: string = 'https://todolist-api.oguzhanercelik.dev/';
-  //baseURL: string = 'http://localhost:8080/';
   constructor(private http: HttpClient, private authService: AuthService) {}
 
   createHttpRequest(endpoint: string, requestType: string, data: object) {
@@ -20,7 +19,6 @@ export class HttpService {
     });
 
     const requestHeaders = { headers: headers };
-    console.log(data);
     switch (requestType.toUpperCase()) {
       case 'POST':
         return this.http

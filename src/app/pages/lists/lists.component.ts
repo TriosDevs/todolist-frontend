@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 import { PopupService } from '../../services/popup.service';
 
@@ -12,7 +13,8 @@ export class ListsComponent {
   lists:[];
   constructor(
     private popupService: PopupService,
-    private httpService: HttpService
+    private httpService: HttpService,
+    
   ) {}
 
   ngOnInit() {
@@ -21,8 +23,9 @@ export class ListsComponent {
       (res) => {
         setTimeout(() => {
           console.log(res);
-          this.lists = res.content;
+          this.lists = res;
           this.isLoading = false;
+          
         }, 2000);
       },
       (error) => {
@@ -33,6 +36,6 @@ export class ListsComponent {
   }
 
   openPopup() {
-    this.popupService.changePopupStatus(true, 'create', 'list');
+    this.popupService.changePopupStatus(true, 'create', 'list',{});
   }
 }
