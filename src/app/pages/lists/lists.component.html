@@ -4,15 +4,15 @@
       Create a list
     </button>
   </div>
-  <div *ngFor="let list of lists" class="row p-0 m-0 mt-4">
-    <div class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center">
-      <div class="col-8 col-sm-10 col-md-8 m-2">
-        <div><app-list [list] = "list"></app-list></div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center">
-      <div class="col-8 col-sm-10 col-md-8 m-2">
-        <div><app-list [list] = "list"></app-list></div>
+
+  <div class="list-wrapper">
+    <div *ngFor="let list of lists">
+      <div
+        class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center w-100"
+      >
+        <div class="col-10 col-md-8 m-2">
+          <div><app-list [list]="list"></app-list></div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,4 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+.list-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (max-width: 527px) {
+  .list-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 .lists-button {
   background-color: #FFF361;
   color: #3C4167;
