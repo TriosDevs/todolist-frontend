@@ -46,21 +46,17 @@ export class RegisterComponent {
       return;
     }
 
-    setTimeout(() => {
-      this.httpService
-        .createHttpRequest('auth/register', 'POST', data)
-        .subscribe(
-          (res) => {
-            this.loadingIndicator = false;
-            this.errorStatus = false;
-            this.router.navigate(['/login']);
-          },
-          (error) => {
-            this.errorStatus = true;
-            this.loadingIndicator = false;
-            this.errorMessage = 'Email is already taken!';
-          }
-        );
-    }, 2500);
+    this.httpService.createHttpRequest('auth/register', 'POST', data).subscribe(
+      (res) => {
+        this.loadingIndicator = false;
+        this.errorStatus = false;
+        this.router.navigate(['/login']);
+      },
+      (error) => {
+        this.errorStatus = true;
+        this.loadingIndicator = false;
+        this.errorMessage = 'Email is already taken!';
+      }
+    );
   }
 }

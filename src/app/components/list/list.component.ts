@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ListComponent {
   @Input() list: { id: number; name: string; createdAt: string; count: number };
-
+  dropdownStatus: boolean;
   constructor(
     private popupService: PopupService,
     private httpService: HttpService,
@@ -44,7 +44,12 @@ export class ListComponent {
   openTask() {
     this.router.navigate(['/lists/' + this.list.id]);
   }
-  avoidPropgtn(event: Event) {
+
+  avoidProg(event: Event) {
     event.stopPropagation();
+  }
+
+  toggleDropdown() {
+    this.dropdownStatus == !this.dropdownStatus;
   }
 }

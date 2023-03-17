@@ -5,11 +5,15 @@
     </button>
   </div>
 
-  <div class="list-wrapper">
+  <div
+    *ngIf="isLoading"
+    class="d-flex justify-content-center align-items-center mt-5"
+  >
+    <app-loading-indicator></app-loading-indicator>
+  </div>
+  <div *ngIf="!isLoading" class="list-wrapper">
     <div *ngFor="let list of lists">
-      <div
-        class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center w-100"
-      >
+      <div class="col-12 col-sm-6 m-0 p-0 d-flex justify-content-center w-100">
         <div class="col-10 col-md-8 m-2">
           <div><app-list [list]="list"></app-list></div>
         </div>

@@ -21,13 +21,10 @@ export class ProfileComponent implements OnInit {
     this.isLoading = true;
     this.httpService.createHttpRequest('api/v1/users', 'GET', {}).subscribe(
       (res) => {
-        console.log(res);
-        setTimeout(() => {
-          this.name = res.firstName;
-          this.surname = res.lastName;
-          this.email = res.email;
-          this.isLoading = false;
-        }, 2000);
+        this.name = res.firstName;
+        this.surname = res.lastName;
+        this.email = res.email;
+        this.isLoading = false;
       },
       (error) => {
         console.log(error);
@@ -36,6 +33,6 @@ export class ProfileComponent implements OnInit {
   }
 
   openPopup() {
-    this.popupService.changePopupStatus(true, 'remove', 'profile',{});
+    this.popupService.changePopupStatus(true, 'remove', 'profile', {});
   }
 }

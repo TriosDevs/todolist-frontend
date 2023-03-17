@@ -1,40 +1,38 @@
-@import '../../../styles.scss';
-.list-component-wrapper{
+@import "../../../styles.scss";
+.list-component-wrapper {
   background-color: $white;
   border-radius: 15px 0px 15px 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
 }
 
-.list-dot{
+.list-dot {
   width: 15px;
   height: 15px;
   border-radius: 100%;
   background-color: $yellow;
 }
 
-.list-dots{
+.list-dots {
   width: 20px;
   cursor: pointer;
 }
 
-.task-content{
+.task-content {
   background-color: $darkBlue;
   color: $white;
   border-radius: 0px 0px 0px 15px;
 }
 
-.list-content{
+.list-content {
   color: $darkBlue;
 }
 
-.list-dots-dropdown{
-  display: none;
-  margin-right: -110px;
-  margin-top: -20px;
+.list-dots-dropdown {
   white-space: nowrap;
   border-radius: 15px;
   background-color: $white;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  /*box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;*/
 }
 
 @media screen and (max-width: 1210px) {
@@ -44,23 +42,82 @@
   }
 }
 
-.list-dots-dropdown{
+.list-dots-dropdown {
   cursor: pointer;
 }
 
-.list-dropdown{
-  
+.list-dropdown {
   border-radius: 15px;
 }
 
-.list-dropdown:hover{
+.list-dropdown:hover {
   background-color: rgba(60, 65, 103, 0.14);
 }
 
-.each-list{
+.each-list {
   cursor: pointer;
 }
 
-.show{
+.show {
   display: block;
+}
+
+// dropdown
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  outline: none;
+  user-select: none;
+}
+
+/* button */
+.dropbtn {
+  color: $black;
+  cursor: pointer;
+}
+
+/* dd content */
+.dropdown .dropdown-content {
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+  min-width: 120%;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  border-radius: 18px;
+}
+
+/* show dd content */
+.dropdown:focus .dropdown-content {
+  outline: none;
+  transform: translateY(20px);
+  visibility: visible;
+  opacity: 1;
+}
+/*.dropdown:focus .dropbtn {
+  background-color: #a1a1a1;
+}*/
+
+/* mask to close menu by clicking on the button */
+.dropdown .db2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+}
+.dropdown:focus .db2 {
+  display: inline-block;
+}
+.dropdown .db2:focus .dropdown-content {
+  outline: none;
+  visibility: hidden;
+  opacity: 0;
 }

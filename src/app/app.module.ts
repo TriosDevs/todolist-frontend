@@ -10,7 +10,7 @@ import { ListComponent } from './components/list/list.component';
 import { TaskComponent } from './components/task/task.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import {Routes,RouterModule} from "@angular/router";
+import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
@@ -24,16 +24,24 @@ import { LoadingIndicatorComponent } from './components/loading-indicator/loadin
 import { SuccessMessageComponent } from './components/success-message/success-message.component';
 import { DetailedListComponent } from './components/detailed-list/detailed-list.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
-const appRoutes: Routes =[
-  {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent},
-  {path:'',canActivate:[AuthGuard],component:HomeComponent},
-  {path:'lists',canActivate:[AuthGuard],component:ListsComponent},
-  {path:'lists/:id'/*,canActivate:[AuthGuard]*/,component:DetailedListComponent},
-  {path:'profile'/*,canActivate:[AuthGuard]*/,component:ProfileComponent},
-  {path:'not-found',component:PageNotFoundComponent},
-  {path:'**',redirectTo:'/not-found'}
-]
+const appRoutes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: '', canActivate: [AuthGuard], component: HomeComponent },
+  { path: 'lists', canActivate: [AuthGuard], component: ListsComponent },
+  {
+    path: 'lists/:id',
+    canActivate: [AuthGuard],
+    component: DetailedListComponent,
+  },
+  {
+    path: 'profile',
+    canActivate: [AuthGuard],
+    component: ProfileComponent,
+  },
+  { path: 'not-found',canActivate: [AuthGuard], component: PageNotFoundComponent },
+  { path: '**', redirectTo: '/not-found' },
+];
 
 @NgModule({
   declarations: [
@@ -60,9 +68,9 @@ const appRoutes: Routes =[
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
-  providers: [AuthService,AuthGuard,HttpService],
-  bootstrap: [AppComponent]
+  providers: [AuthService, AuthGuard, HttpService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -26,11 +26,18 @@
       />
     </div>
   </div>
-
+  <div *ngIf="errorStatus">
+    <app-error-message [message]="errorMessage"></app-error-message>
+  </div>
   <div class="row row-sm m-0 p-0 mt-4 w-100 d-flex justify-content-center">
     <div class="col-12 col-sm-6 col-lg-5">
-      <button class="btn popup-update-content-button w-100 px-3">
-        Confirm
+      <button class="btn popup-update-content-button w-100 px-3" *ngIf="!isLoading">
+        <div
+          class="spinner-border"
+          role="status"
+          *ngIf="isLoading"
+        ></div>
+        <div *ngIf="!isLoading">Confirm</div>
       </button>
     </div>
   </div>

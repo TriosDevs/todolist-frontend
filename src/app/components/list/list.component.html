@@ -6,16 +6,24 @@
     <div class="ms-4 list-dot"></div>
     <div class="list-content ms-2 py-2 fw-bold">{{ list.name }}</div>
   </div>
-  <div class="d-flex justify-content-end">
-    <div (click)="avoidPropgtn($event)">
-      <img class="list-dots me-3 mb-3" src="assets/images/dots.png" />
-    </div>
-  </div>
-  <div class="d-flex justify-content-end">
-    <div class="list-dots-dropdown position-absolute p-3 ab text-center">
-      <div class="list-dropdown p-1 px-3" (click)="editList()">Edit</div>
-      <div class="list-dropdown p-1 px-3 mt-1" (click)="removeList()">
-        Remove
+
+  <div class="d-flex justify-content-end align-items-center">
+    <div (click)="avoidProg($event)" class="dropdown" tabindex="1">
+      <i class="db2" tabindex="1"></i>
+
+      <div
+        class="dropbtn d-flex justify-content-center align-items-center py-2 px-2"
+      >
+        <img class="list-dots" src="assets/images/dots.png" />
+      </div>
+
+      <div class="dropdown-content top-0">
+        <div class="list-dots-dropdown p-3 text-center">
+          <div class="list-dropdown p-1 px-3" (click)="editList()">Edit</div>
+          <div class="list-dropdown p-1 px-3 mt-1" (click)="removeList()">
+            Remove
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -35,20 +35,18 @@ export class LoginComponent {
       return;
     }
 
-    setTimeout(() => {
-      this.httpService.createHttpRequest('auth/login', 'POST', data).subscribe(
-        (res) => {
-          this.authService.setToken(res.jwtToken);
-          this.loadingIndicator = false;
-          this.errorStatus = false;
-          this.router.navigate(['/']);
-        },
-        (error) => {
-          this.errorStatus = true;
-          this.loadingIndicator = false;
-          this.errorMessage = 'Email or password is invalid!';
-        }
-      );
-    }, 3000);
+    this.httpService.createHttpRequest('auth/login', 'POST', data).subscribe(
+      (res) => {
+        this.authService.setToken(res.jwtToken);
+        this.loadingIndicator = false;
+        this.errorStatus = false;
+        this.router.navigate(['/']);
+      },
+      (error) => {
+        this.errorStatus = true;
+        this.loadingIndicator = false;
+        this.errorMessage = 'Email or password is invalid!';
+      }
+    );
   }
 }

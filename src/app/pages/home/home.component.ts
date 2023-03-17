@@ -18,14 +18,12 @@ export class HomeComponent implements OnInit {
     this.isLoading = true;
     this.httpService.createHttpRequest('api/v1/lists', 'GET', {}).subscribe(
       (res) => {
-        setTimeout(() => {
-          this.list = res;
-          if (this.list.length == 0) {
-            this.informationAboutList = true;
-          }
+        this.list = res;
+        if (this.list.length == 0) {
+          this.informationAboutList = true;
+        }
 
-          this.isLoading = false;
-        }, 2000);
+        this.isLoading = false;
       },
       (error) => {
         console.log(error);

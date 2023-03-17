@@ -3,20 +3,32 @@
   class="popup-wrapper d-flex justify-content-center align-items-center p-0 m-0"
   (click)="changePopupStatus()"
 >
-<div class="popup-content-wrapper d-flex flex-column col-8 col-sm-10 col-md-7 col-lg-6 col-xl-4"  (click)="avoidClosing($event)">
-  <div class="align-self-end me-3 mt-3 mb-3">
-    <img
-      role="button"
-      (click)="changePopupStatus()"
-      class="popup-close-btn"
-      src="assets/images/close.png"
-    />
-  </div>
+  <div
+    class="popup-content-wrapper d-flex flex-column col-8 col-sm-10 col-md-7 col-lg-6 col-xl-4"
+    (click)="avoidPropagation($event)"
+  >
+    <div class="align-self-end me-3 mt-3 mb-3">
+      <img
+        role="button"
+        (click)="changePopupStatus()"
+        class="popup-close-btn"
+        src="assets/images/close.png"
+      />
+    </div>
 
-  <div class="popup-content mx-5 mb-3" [ngSwitch]="popupData.type">
-    <app-popup-remove-content [popup]="popupData" *ngSwitchCase="'remove'"></app-popup-remove-content>
-    <app-popup-create-content [popup]="popupData" *ngSwitchCase="'create'"></app-popup-create-content>
-    <app-popup-update-content [popup]="popupData" *ngSwitchCase="'update'"></app-popup-update-content>
+    <div class="popup-content mx-5 mb-3" [ngSwitch]="popupData.type">
+      <app-popup-remove-content
+        [popup]="popupData"
+        *ngSwitchCase="'remove'"
+      ></app-popup-remove-content>
+      <app-popup-create-content
+        [popup]="popupData"
+        *ngSwitchCase="'create'"
+      ></app-popup-create-content>
+      <app-popup-update-content
+        [popup]="popupData"
+        *ngSwitchCase="'update'"
+      ></app-popup-update-content>
+    </div>
   </div>
-</div>
 </div>

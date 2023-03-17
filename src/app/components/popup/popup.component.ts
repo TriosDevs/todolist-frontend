@@ -15,26 +15,20 @@ export class PopupComponent implements OnInit {
   popupData: {};
 
   constructor(
-    private popupService: PopupService,
-    private authService: AuthService,
-    private httpService: HttpService,
-    private router: Router
+    private popupService: PopupService
   ) {}
   ngOnInit() {
-    
     this.popupService.getMessage().subscribe((data) => {
-      console.log(data)
+      console.log(data);
       this.popupStatus = data.status;
       this.popupData = data;
     });
   }
 
-  getPopupData(){
-
-  }
+  getPopupData() {}
 
   changePopupStatus() {
-    this.popupService.changePopupStatus(false,'-','-',{});
+    this.popupService.changePopupStatus(false, '-', '-', {});
   }
 
   /*removeAccount() {
@@ -67,8 +61,7 @@ export class PopupComponent implements OnInit {
     );
   }*/
 
-  avoidClosing(e:Event){
-    e.stopPropagation()
-    
+  avoidPropagation(e: Event) {
+    e.stopPropagation();
   }
 }

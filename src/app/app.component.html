@@ -1,6 +1,7 @@
 <div class="position-relative">
   <div class="position-absolute top-0 w-100 ">
     <app-navbar *ngIf="auth"></app-navbar>
+    <app-success-message></app-success-message>
     <router-outlet></router-outlet>
   </div>
   <div class="app-popup position-absolute top-0">

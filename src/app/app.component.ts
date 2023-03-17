@@ -50,36 +50,17 @@ export class AppComponent {
   @HostListener('document:click', ['$event.target'])
   onClick(element: HTMLElement) {
 
-    
-    // for list dropdown
-    if (element.classList.contains('list-dots')) {
-      let dropdown =
-        element.parentElement.parentElement.parentElement.children[3]
-          .children[0];
-
-      if (dropdown.classList.contains('show')) {
-        $('.list-dots-dropdown').removeClass('show');
-      } else {
-        $('.list-dots-dropdown').removeClass('show');
-        dropdown.classList.add('show');
-      }
-    } else {
-      $('.list-dots-dropdown').removeClass('show');
-    }
-
     // for task dropdown
     if (element.classList.contains('task-edit-img')) {
       let dropdown = element.parentElement.children[1];
 
       if (element.classList.contains('show')) {
-
-        if(dropdown.classList.contains('show')){
+        if (dropdown.classList.contains('show')) {
           dropdown.classList.remove('show');
           $('.task-edit-img').removeClass('show');
-        }else{
+        } else {
           dropdown.classList.add('show');
         }
-        
       } else {
         $('.task-edit-img').removeClass('show');
         if (dropdown.classList.contains('show')) {
@@ -94,6 +75,6 @@ export class AppComponent {
       $('.task-edit-dropdown').removeClass('show');
       $('.task-edit-img').removeClass('show');
     }
-
   }
+
 }

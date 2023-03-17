@@ -1,9 +1,9 @@
-<div class="gradient-animation ">
+<div *ngIf="successStatus" class="gradient-animation ">
   <div class="gradient d-flex align-items-center">
     <div
       class="fw-bold text-light d-flex justify-content-end align-items-center w-100 py-1 me-5"
     >
-      sSuccess-message
+      {{message}}
     </div>
   </div>
 </div>

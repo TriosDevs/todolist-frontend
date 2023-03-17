@@ -9,7 +9,7 @@
   width: 15px;
   height: 15px;
   border-radius: 100%;
-  background-color: #FFF361;
+  background-color: #fff361;
 }
 
 .list-dots {
@@ -18,23 +18,21 @@
 }
 
 .task-content {
-  background-color: #3C4167;
+  background-color: #3c4167;
   color: #ffffff;
   border-radius: 0px 0px 0px 15px;
 }
 
 .list-content {
-  color: #3C4167;
+  color: #3c4167;
 }
 
 .list-dots-dropdown {
-  display: none;
-  margin-right: -110px;
-  margin-top: -20px;
   white-space: nowrap;
   border-radius: 15px;
   background-color: #ffffff;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  /*box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;*/
 }
 
 @media screen and (max-width: 1210px) {
@@ -62,4 +60,64 @@
 
 .show {
   display: block;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  outline: none;
+  user-select: none;
+}
+
+/* button */
+.dropbtn {
+  color: #000;
+  cursor: pointer;
+}
+
+/* dd content */
+.dropdown .dropdown-content {
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+  min-width: 120%;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  border-radius: 18px;
+}
+
+/* show dd content */
+.dropdown:focus .dropdown-content {
+  outline: none;
+  transform: translateY(20px);
+  visibility: visible;
+  opacity: 1;
+}
+
+/*.dropdown:focus .dropbtn {
+  background-color: #a1a1a1;
+}*/
+/* mask to close menu by clicking on the button */
+.dropdown .db2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+}
+
+.dropdown:focus .db2 {
+  display: inline-block;
+}
+
+.dropdown .db2:focus .dropdown-content {
+  outline: none;
+  visibility: hidden;
+  opacity: 0;
 }
