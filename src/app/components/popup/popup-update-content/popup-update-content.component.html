@@ -1,4 +1,4 @@
-<form (ngSubmit)="updateList(f)" #f="ngForm">
+<form (ngSubmit)="popup.target == 'task' ? updateTask(f) :updateList(f)" #f="ngForm">
   <div
     class="popup-list-descp d-flex justify-self-center align-self-start align-items-center"
   >

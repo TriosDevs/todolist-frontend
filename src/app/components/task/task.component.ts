@@ -1,32 +1,60 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
+import { HttpService } from 'src/app/services/http.service';
 import { PopupService } from 'src/app/services/popup.service';
+import { TasksService } from 'src/app/services/tasks.service';
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.scss'],
 })
 export class TaskComponent {
-  taskStatus: boolean;
+  @Input() task: { id: number; name: string; done: boolean; createdAt: string };
   dropdownStatus: boolean;
 
-  constructor(private popupSerive: PopupService) {}
+  constructor(
+    private popupService: PopupService,
+    private httpService: HttpService,
+    private tasksService: TasksService,
+    private router: Router
+  ) {}
 
   changeTaskStatus() {
-    this.taskStatus = !this.taskStatus;
+    let data = {
+      name: this.task.name,
+      done: !this.task.done,
+    };
+
+    this.httpService
+      .createHttpRequest('api/v1/tasks/' + this.task.id, 'PUT', data)
+      .subscribe(
+        (res) => {
+          console.log(res);
+          this.tasksService.fetchData(this.router.url.slice(7));
+          // this.lists = res;
+          //this.isLoading = false;
+        },
+        (error) => {
+          //this.isLoading = false;
+          console.log(error);
+        }
+      );
   }
 
   openDropdown() {
     this.dropdownStatus = !this.dropdownStatus;
   }
 
-  openPopupForEditingTask() {
-    this.dropdownStatus = !this.dropdownStatus;
-    this.popupSerive.changePopupStatus(true, 'update', 'task',{});
+  editTask() {
+    this.popupService.changePopupStatus(true, 'update', 'task', {
+      id: this.task.id,
+    });
   }
 
-  openPopupForRemovingTask() {
-    this.dropdownStatus = !this.dropdownStatus;
-    this.popupSerive.changePopupStatus(true, 'remove', 'task',{});
+  removeTask() {
+    this.popupService.changePopupStatus(true, 'remove', 'task', {
+      id: this.task.id,
+    });
   }
 }

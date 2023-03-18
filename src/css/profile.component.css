@@ -3,13 +3,13 @@
   width: 125px;
   height: 125px;
   border-radius: 100%;
-  background-color: #3C4167;
+  background-color: #3c4167;
   z-index: 1;
 }
 
 .profile-name {
   margin-top: 90px;
-  color: #3C4167;
+  color: #3c4167;
 }
 
 .profile-content {
@@ -21,7 +21,7 @@
 }
 
 .profile-email-password {
-  background-color: #3C4167;
+  background-color: #3c4167;
   font-weight: bold;
   color: #ffffff;
   border-radius: 0px 20px 20px 0px;
@@ -34,11 +34,11 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 5px 0px;
   border-style: solid;
   border-width: thin;
-  border-color: #3C4167;
+  border-color: #3c4167;
 }
 
 .profile-update-btn {
-  background-color: #587CF7;
+  background-color: #587cf7;
   border-radius: 18px;
   color: #ffffff;
 }

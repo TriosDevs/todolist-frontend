@@ -4,6 +4,7 @@ import { HttpService } from 'src/app/services/http.service';
 import { ListsService } from 'src/app/services/lists.service';
 import { PopupService } from 'src/app/services/popup.service';
 import { SuccessMessageToggleService } from 'src/app/services/success-message-toggle.service';
+import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
   selector: 'app-popup-remove-content',
@@ -19,7 +20,9 @@ export class PopupRemoveContentComponent {
     private popupService: PopupService,
     private httpService: HttpService,
     private successMessageToggleService: SuccessMessageToggleService,
-    private listsService: ListsService
+    private listsService: ListsService,
+    private tasksService: TasksService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -49,6 +52,26 @@ export class PopupRemoveContentComponent {
           );
 
           this.listsService.fetchData();
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }
+
+  removeTask() {
+    this.isLoading = true;
+    this.httpService
+      .createHttpRequest('api/v1/tasks/' + this.popup.data.id ,'DELETE', {})
+      .subscribe(
+        (res) => {
+          this.isLoading = false;
+          this.popupService.changePopupStatus(false, '-', '-', {});
+          this.successMessageToggleService.openSuccessMessage(
+            'Your task removed successfully!'
+          );
+
+          this.tasksService.fetchData(this.router.url.slice(7) );
         },
         (error) => {
           console.log(error);

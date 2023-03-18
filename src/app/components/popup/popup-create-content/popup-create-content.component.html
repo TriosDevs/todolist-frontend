@@ -1,54 +1,9 @@
-<!---<form
-(ngSubmit)="createList(f)"
-#f="ngForm"
-class="d-none popup-content-wrapper d-flex flex-column justify-content-center align-items-center mx-4 px-3 px-sm-5 py-4"
+<!--Task-->
+<form
+  *ngIf="popup.target == 'task'"
+  (ngSubmit)="createTask(f)"
+  #f="ngForm"
 >
-<div
-  class="popup-list-descp d-flex justify-self-center align-self-start align-items-center"
->
-  <div class="popup-list-dot"></div>
-  <div class="ms-1">Give a name to your list!</div>
-</div>
-<div class="popup-list-line mt-1"></div>
-<div class="popup-list-input-wrapper row py-2 px-2 mt-3 mb-5 mx-1">
-  <div
-    class="col-3 col-sm-2 col-md-2 popup-list-input-left-side d-flex justify-content-center align-items-center"
-  >
-    <img
-      class="popup-list-input-img opacity-75"
-      src="assets/images/list-name.png"
-    />
-  </div>
-  <div
-    class="col-9 col-sm-10 col-md-10 popup-list-input-right-side d-flex justify-content-start align-items-center"
-  >
-    <input
-      class="popup-list-input w-100 py-1"
-      type="text"
-      name="name"
-      ngModel
-    />
-  </div>
-</div>
-<div class="row row-sm m-0 p-0 mt-4 w-100 d-flex justify-content-center">
-  <div class="col-12 col-sm-6 col-lg-5">
-    <button class="btn popup-content-confirm-button-2 w-100 px-3">
-      Confirm
-    </button>
-  </div>
-  <div class="col-12 col-sm-6 col-lg-5 mt-2 mt-sm-0">
-    <button
-      class="btn popup-content-cancel-button w-100 px-3"
-      (click)="changePopupStatus()"
-    >
-      Cancel
-    </button>
-  </div>
-</div>
-</form>
---->
-
-<form (ngSubmit)="createList(f)" #f="ngForm">
   <div
     class="popup-list-descp d-flex justify-self-center align-self-start align-items-center"
   >
@@ -85,11 +40,52 @@ class="d-none popup-content-wrapper d-flex flex-column justify-content-center al
         [disabled]="isLoading"
         class="btn popup-create-content-button w-100 px-3"
       >
-        <div
-          class="spinner-border"
-          role="status"
-          *ngIf="isLoading"
-        ></div>
+        <div class="spinner-border" role="status" *ngIf="isLoading"></div>
+        <div *ngIf="!isLoading">Confirm</div>
+      </button>
+    </div>
+  </div>
+</form>
+
+<!--List-->
+<form *ngIf="popup.target == 'list'" (ngSubmit)="createList(f)" #f="ngForm">
+  <div
+    class="popup-list-descp d-flex justify-self-center align-self-start align-items-center"
+  >
+    <div class="popup-list-dot"></div>
+    <div class="ms-1">{{ header }}</div>
+  </div>
+  <div class="popup-list-line mt-1"></div>
+  <div class="popup-list-input-wrapper row py-2 px-2 mt-3 mb-5 mx-1">
+    <div
+      class="col-3 col-sm-2 col-md-2 popup-list-input-left-side d-flex justify-content-center align-items-center"
+    >
+      <img
+        class="popup-list-input-img opacity-75"
+        src="assets/images/list-name.png"
+      />
+    </div>
+    <div
+      class="col-9 col-sm-10 col-md-10 popup-list-input-right-side d-flex justify-content-start align-items-center"
+    >
+      <input
+        class="popup-list-input w-100 py-1"
+        type="text"
+        name="name"
+        ngModel
+      />
+    </div>
+  </div>
+  <div *ngIf="errorStatus">
+    <app-error-message [message]="errorMessage"></app-error-message>
+  </div>
+  <div class="row row-sm m-0 p-0 mt-4 w-100 d-flex justify-content-center">
+    <div class="col-12 col-sm-6 col-lg-5">
+      <button
+        [disabled]="isLoading"
+        class="btn popup-create-content-button w-100 px-3"
+      >
+        <div class="spinner-border" role="status" *ngIf="isLoading"></div>
         <div *ngIf="!isLoading">Confirm</div>
       </button>
     </div>

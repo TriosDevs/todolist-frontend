@@ -5,6 +5,7 @@ import { HttpService } from 'src/app/services/http.service';
 import { ListsService } from 'src/app/services/lists.service';
 import { PopupService } from 'src/app/services/popup.service';
 import { SuccessMessageToggleService } from 'src/app/services/success-message-toggle.service';
+import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
   selector: 'app-popup-update-content',
@@ -22,7 +23,9 @@ export class PopupUpdateContentComponent {
     private httpService: HttpService,
     private successMessageToggleService: SuccessMessageToggleService,
     private listsService: ListsService,
-    private popupService: PopupService
+    private tasksService: TasksService,
+    private popupService: PopupService,
+    private router:Router
   ) {}
 
   ngOnInit() {
@@ -59,6 +62,38 @@ export class PopupUpdateContentComponent {
           );
 
           this.listsService.fetchData();
+        },
+        (error) => {
+          console.log(error);
+          this.errorStatus = true;
+          this.isLoading = false;
+        }
+      );
+  }
+
+  updateTask(form: NgForm) {
+    let data = {
+      name: form.value.name.trim(),
+    };
+
+    this.errorStatus = false;
+    if (data.name.length == 0) {
+      this.errorMessage = 'The area must be filled!';
+      this.errorStatus = true;
+      return;
+    }
+    this.isLoading = true;
+    this.httpService
+      .createHttpRequest('api/v1/tasks/' + this.popup.data.id, 'PUT', data)
+      .subscribe(
+        (res) => {
+          this.isLoading = false;
+          this.popupService.changePopupStatus(false, '-', '-', {});
+          this.successMessageToggleService.openSuccessMessage(
+            'Your task updated successfully!'
+          );
+
+          this.tasksService.fetchData(this.router.url.slice(7) );
         },
         (error) => {
           console.log(error);

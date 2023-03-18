@@ -9,7 +9,7 @@
 }
 
 .task-tick-section-background {
-  background-color: #FFF361;
+  background-color: #fff361;
 }
 
 .task-tick-checkbox-wrapper {
@@ -17,7 +17,7 @@
   height: 20px;
   border-style: solid;
   border-width: thin;
-  border-color: #3C4167;
+  border-color: #3c4167;
 }
 
 .task-tick-checkbox {
@@ -27,13 +27,13 @@
 }
 
 .task-content {
-  background-color: #FFF361;
-  color: #3C4167;
+  background-color: #fff361;
+  color: #3c4167;
   border-radius: 30px 0px 0px 30px;
 }
 
 .task-content-wrapper {
-  background-color: #FFF361;
+  background-color: #fff361;
   border-radius: 30px;
 }
 

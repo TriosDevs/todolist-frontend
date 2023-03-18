@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class ListComponent {
   @Input() list: { id: number; name: string; createdAt: string; count: number };
   dropdownStatus: boolean;
+  taskNumber: string;
   constructor(
     private popupService: PopupService,
     private httpService: HttpService,
@@ -19,7 +20,12 @@ export class ListComponent {
   ) {}
 
   ngOnInit() {
-    this.httpService.createHttpRequest('api/v1/tasks/', 'GET', {}).subscribe(
+    if (this.list.count > 1) {
+      this.taskNumber = this.list.count + ' Tasks';
+    }else{
+      this.taskNumber = this.list.count + ' Task';
+    }
+    this.httpService.createHttpRequest('api/v1/lists/', 'GET', {}).subscribe(
       (res) => {
         console.log(res);
       },

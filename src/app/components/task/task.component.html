@@ -8,7 +8,7 @@
         class="col-8 col-sm-10 task-content-wrapper d-flex justify-content-between align-items-center m-0 p-0"
       >
         <div class="task-content py-1 d-flex align-items-center">
-          <div class="mx-3">Asadasdasdas sadsadsadsa d as d asd s ddsadas</div>
+          <div class="mx-3">{{task.name}}</div>
         </div>
 
         <div
@@ -16,14 +16,14 @@
         >
           <div
             [ngClass]="
-              taskStatus
+              task.done
                 ? 'task-tick-checkbox-wrapper task-tick-section-background d-flex justify-content-center align-items-center'
                 : 'task-tick-checkbox-wrapper d-flex justify-content-center align-items-center'
             "
             (click)="changeTaskStatus()"
           >
             <img
-              *ngIf="taskStatus"
+              *ngIf="task.done"
               class="task-tick-checkbox"
               src="assets/images/check-mark.png"
             />
@@ -41,13 +41,13 @@
           <div class="list-dots-dropdown">
             <div
               class="task-dropdown p-1 px-3"
-              (click)="openPopupForEditingTask()"
+              (click)="editTask()"
             >
               Edit
             </div>
             <div
               class="task-dropdown p-1 px-3 mt-1"
-              (click)="openPopupForRemovingTask()"
+              (click)="removeTask()"
             >
               Remove
             </div>
