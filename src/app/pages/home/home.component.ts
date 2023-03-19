@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { HttpService } from '../../services/http.service';
 import { PopupService } from '../../services/popup.service';
@@ -14,7 +15,10 @@ export class HomeComponent implements OnInit {
   informationAboutList: boolean = false;
   isLoading: boolean;
   index: string;
-  constructor(private httpService: HttpService) {}
+  event$
+  constructor(private httpService: HttpService, private router: Router) {
+
+  }
 
   ngOnInit() {
     this.isLoading = true;

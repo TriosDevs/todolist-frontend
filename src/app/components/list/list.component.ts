@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PopupService } from 'src/app/services/popup.service';
 import * as $ from 'jquery';
 import { HttpService } from 'src/app/services/http.service';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -22,17 +22,9 @@ export class ListComponent {
   ngOnInit() {
     if (this.list.count > 1) {
       this.taskNumber = this.list.count + ' Tasks';
-    }else{
+    } else {
       this.taskNumber = this.list.count + ' Task';
     }
-    this.httpService.createHttpRequest('api/v1/lists/', 'GET', {}).subscribe(
-      (res) => {
-        console.log(res);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
   }
 
   editList() {

@@ -1,6 +1,7 @@
 import { Component, HostListener, Input } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import * as $ from 'jquery';
+import { NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,8 +10,14 @@ import * as $ from 'jquery';
 })
 export class NavbarComponent {
   searchInput: boolean;
-  constructor(private authService: AuthService) {
-
+  currentUrl: string;
+  event$;
+  constructor(private authService: AuthService, private router: Router) {
+    this.event$ = this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationStart) {
+        this.currentUrl = event.url;
+      }
+    });
   }
 
   onLogout() {
@@ -36,9 +43,5 @@ export class NavbarComponent {
 
   onSwitch() {
     this.searchInput = !this.searchInput;
-  }
-
-  ngAfterViewInit() {
-
   }
 }
